@@ -1,17 +1,16 @@
 import React from "react";
 
-import arne from "../img/arne.jpg";
-import aarhus2 from "../img/aarhus2.jpg";
-import dark6 from "../img/dark6.jpg";
-import float4 from "../img/float4.jpg";
-import mirror1 from "../img/mirror1.jpg";
-import see5 from "../img/see5.jpg";
-import skirt from "../img/skirt.jpg";
-import feel from "../img/skirt.jpg";
-import hords from "../img/hords.png";
-import halloween from "../img/halloween.jpg";
-import white from "../img/white.jpg";
-import waet from "../img/waet.jpg";
+import arne from "../img/thumbs/arne.jpg";
+import aarhus from "../img/thumbs/aarhus.jpg";
+import dark from "../img/thumbs/dark.jpg";
+import float from "../img/thumbs/float.jpg";
+import mirror from "../img/thumbs/mirror.jpg";
+import see from "../img/thumbs/see.jpg";
+import skirt from "../img/thumbs/skirt.jpg";
+import feel from "../img/thumbs/feel.jpg";
+import hords from "../img/thumbs/hords.png";
+import halloween from "../img/thumbs/halloween.jpg";
+import waet from "../img/thumbs/waet.jpg";
 
 import "./Main.css";
 
@@ -66,11 +65,16 @@ export const Main = () => {
   return (
     <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
       <img class="image" src={arne} draggable="false" />
-      <img class="image" src={see5} draggable="false" />
+      <img class="image" src={see} draggable="false" />
       <img class="image" src={hords} draggable="false" />
-      <img class="image" src={float4} draggable="false" />
+      <img class="image" src={float} draggable="false" />
+      <img class="image" src={waet} draggable="false" />
       <img class="image" src={halloween} draggable="false" />
       <img class="image" src={skirt} draggable="false" />
+      <img class="image" src={feel} draggable="false" />
+      <img class="image" src={dark} draggable="false" />
+      <img class="image" src={aarhus} draggable="false" />
+      <img class="image" src={mirror} draggable="false" />
     </div>
   );
 };
