@@ -12,7 +12,7 @@ import hords from "../img/thumbs/hords.png";
 import halloween from "../img/thumbs/halloween.jpg";
 import waet from "../img/thumbs/waet.jpg";
 
-import "./Main.css";
+import "./Main.less";
 
 export const Main = () => {
   const track = document.getElementById("image-track");
@@ -63,18 +63,21 @@ export const Main = () => {
   window.ontouchmove = (e) => handleOnMove(e.touches[0]);
 
   return (
-    <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
-      <img class="image" src={arne} draggable="false" />
-      <img class="image" src={see} draggable="false" />
-      <img class="image" src={hords} draggable="false" />
-      <img class="image" src={float} draggable="false" />
-      <img class="image" src={waet} draggable="false" />
-      <img class="image" src={halloween} draggable="false" />
-      <img class="image" src={skirt} draggable="false" />
-      <img class="image" src={feel} draggable="false" />
-      <img class="image" src={dark} draggable="false" />
-      <img class="image" src={aarhus} draggable="false" />
-      <img class="image" src={mirror} draggable="false" />
-    </div>
+    <>
+      <div className="title">le Kreuzbergois | Photographies</div>
+      <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
+        <img class="image" src={arne} draggable="false" />
+        <img class="image" src={see} draggable="false" />
+        <img class="image" src={hords} draggable="false" />
+        <img class="image" src={float} draggable="false" />
+        <img class="image" src={waet} draggable="false" />
+        <img class="image" src={halloween} draggable="false" />
+        <img class="image" src={skirt} draggable="false" />
+        <img class="image" src={feel} draggable="false" />
+        <img class="image" src={dark} draggable="false" />
+        <img class="image" src={aarhus} draggable="false" />
+        <img class="image" src={mirror} draggable="false" />
+      </div>
+    </>
   );
 };
