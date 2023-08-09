@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 import arne from "../img/thumbs/arne.jpg";
 import aarhus from "../img/thumbs/aarhus.jpg";
@@ -16,26 +16,28 @@ import "./Main.less";
 
 export const Main = () => {
   const track = document.getElementById("image-track");
+  const mouseDownAt = useRef(0);
+  const prevPercentage = useRef(0);
+  const percentage = useRef(0);
 
-  const handleOnDown = (e) => (track.dataset.mouseDownAt = e.clientX);
+  const handleOnDown = (e) => (mouseDownAt.current = e.clientX);
 
   const handleOnUp = () => {
-    track.dataset.mouseDownAt = "0";
-    track.dataset.prevPercentage = track.dataset.percentage;
+    mouseDownAt.current = 0;
+    prevPercentage.current = percentage.current;
   };
 
   const handleOnMove = (e) => {
-    if (track.dataset.mouseDownAt === "0") return;
+    if (mouseDownAt.current === 0) return;
 
-    const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
+    const mouseDelta = parseFloat(mouseDownAt.current) - e.clientX,
       maxDelta = window.innerWidth / 2;
 
-    const percentage = (mouseDelta / maxDelta) * -100,
-      nextPercentageUnconstrained =
-        parseFloat(track.dataset.prevPercentage) + percentage,
+    const result = (mouseDelta / maxDelta) * -100,
+      nextPercentageUnconstrained = parseFloat(prevPercentage.current) + result,
       nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
 
-    track.dataset.percentage = nextPercentage;
+    percentage.current = nextPercentage;
 
     track.animate(
       {
@@ -54,7 +56,10 @@ export const Main = () => {
     }
   };
 
-  /* -- Had to add extra lines for touch events -- */
+  const handleOnScroll = (e) => {
+    //console.log(e.deltaX);
+  };
+
   window.onmousedown = (e) => handleOnDown(e);
   window.ontouchstart = (e) => handleOnDown(e.touches[0]);
   window.onmouseup = (e) => handleOnUp(e);
@@ -62,21 +67,28 @@ export const Main = () => {
   window.onmousemove = (e) => handleOnMove(e);
   window.ontouchmove = (e) => handleOnMove(e.touches[0]);
 
+  useEffect(() => {
+    document.addEventListener("wheel", handleOnScroll);
+    return () => {
+      document.removeEventListener("wheel", handleOnScroll);
+    };
+  }, [handleOnScroll]);
+
   return (
     <>
       <div className="title">le Kreuzbergois | Photographies</div>
-      <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
-        <img class="image" src={arne} draggable="false" />
-        <img class="image" src={see} draggable="false" />
-        <img class="image" src={hords} draggable="false" />
-        <img class="image" src={float} draggable="false" />
-        <img class="image" src={waet} draggable="false" />
-        <img class="image" src={halloween} draggable="false" />
-        <img class="image" src={skirt} draggable="false" />
-        <img class="image" src={feel} draggable="false" />
-        <img class="image" src={dark} draggable="false" />
-        <img class="image" src={aarhus} draggable="false" />
-        <img class="image" src={mirror} draggable="false" />
+      <div id="image-track">
+        <img className="image" src={arne} draggable="false" />
+        <img className="image" src={see} draggable="false" />
+        <img className="image" src={hords} draggable="false" />
+        <img className="image" src={float} draggable="false" />
+        <img className="image" src={waet} draggable="false" />
+        <img className="image" src={halloween} draggable="false" />
+        <img className="image" src={skirt} draggable="false" />
+        <img className="image" src={feel} draggable="false" />
+        <img className="image" src={dark} draggable="false" />
+        <img className="image" src={aarhus} draggable="false" />
+        <img className="image" src={mirror} draggable="false" />
       </div>
     </>
   );
