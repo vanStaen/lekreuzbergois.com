@@ -64,7 +64,6 @@ export const Main = () => {
 
   return (
     <>
-      <div className="title">le Kreuzbergois | Photographies</div>
       <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
         <img class="image" src={arne} draggable="false" />
         <img class="image" src={see} draggable="false" />
@@ -79,5 +78,6 @@ export const Main = () => {
         <img class="image" src={mirror} draggable="false" />
       </div>
     </>
+
   );
 };
