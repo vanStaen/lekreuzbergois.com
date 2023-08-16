@@ -20,11 +20,18 @@ export const Main = () => {
   const prevPercentage = useRef(0);
   const percentage = useRef(0);
 
-  const handleOnDown = (e) => (mouseDownAt.current = e.clientX);
+  const elementForCursor = document.getElementById('image-container');
+
+  const handleOnDown = (e) => {
+    console.log('elementForCursor', elementForCursor);
+    mouseDownAt.current = e.clientX;
+    elementForCursor.style.cursor = 'grabbing';
+  };
 
   const handleOnUp = () => {
     mouseDownAt.current = 0;
     prevPercentage.current = percentage.current;
+    elementForCursor.style.cursor = 'grab';
   };
 
   const handleOnMove = (e) => {
@@ -75,21 +82,21 @@ export const Main = () => {
   }, [handleOnScroll]);
 
   return (
-    <>
-      <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
-        <img class="image" src={arne} draggable="false" />
-        <img class="image" src={see} draggable="false" />
-        <img class="image" src={hords} draggable="false" />
-        <img class="image" src={float} draggable="false" />
-        <img class="image" src={waet} draggable="false" />
-        <img class="image" src={halloween} draggable="false" />
-        <img class="image" src={skirt} draggable="false" />
-        <img class="image" src={feel} draggable="false" />
-        <img class="image" src={dark} draggable="false" />
-        <img class="image" src={aarhus} draggable="false" />
-        <img class="image" src={mirror} draggable="false" />
+    <div className="image-container" id="image-container">
+      <div id="image-track">
+        <img className="image" src={arne} draggable="false" />
+        <img className="image" src={see} draggable="false" />
+        <img className="image" src={hords} draggable="false" />
+        <img className="image" src={float} draggable="false" />
+        <img className="image" src={waet} draggable="false" />
+        <img className="image" src={halloween} draggable="false" />
+        <img className="image" src={skirt} draggable="false" />
+        <img className="image" src={feel} draggable="false" />
+        <img className="image" src={dark} draggable="false" />
+        <img className="image" src={aarhus} draggable="false" />
+        <img className="image" src={mirror} draggable="false" />
       </div>
-    </>
+    </div>
 
   );
 };
