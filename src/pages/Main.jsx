@@ -1,22 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
+import { LoadingOutlined } from '@ant-design/icons';
 import { observer } from "mobx-react-lite";
-import { ExportOutlined } from '@ant-design/icons';
+import { Spin } from 'antd';
 
 import { ShowSensibleSlider } from "../components/ShowSensibleSlider/ShowSensibleSlider";
 import { pageStore } from "../store/pageStore";
 import { pictureStore } from "../store/pictureStore";
-
-import arne from "../img/thumbs/arne.jpg";
-import aarhus from "../img/thumbs/aarhus.jpg";
-import dark from "../img/thumbs/dark.jpg";
-import float from "../img/thumbs/float.jpg";
-import mirror from "../img/thumbs/mirror.jpg";
-import see from "../img/thumbs/see.jpg";
-import skirt from "../img/thumbs/skirt.jpg";
-import feel from "../img/thumbs/feel.jpg";
-import hords from "../img/thumbs/hords.png";
-import halloween from "../img/thumbs/halloween.jpg";
-import waet from "../img/thumbs/waet.jpg";
+import useImage from "./useImage";
 
 import "./Main.less";
 
@@ -88,7 +78,7 @@ export const Main = observer(() => {
   }, [handleOnScroll]);
 
   const handleMouseOver = (desc, year) => {
-    const formatedDesc = <>{desc}<span className="imageDescriptionSepqarator"> - </span>{year}</>
+    const formatedDesc = <>{desc}<span className="imageDescriptionSepqarator"> | </span>{year}</>
     setImageDesc(formatedDesc);
   }
 
@@ -97,16 +87,27 @@ export const Main = observer(() => {
   }
 
   const picturesFormatted = pictureStore.pictures.map((picture) => {
+
+    const { loading, image } = useImage(picture.name, 'img/thumbs', picture.imgtype)
+
     return (
-      <div className="imageContainer">
-        <img
-          className={`image ${!pageStore.showSensiblePictures && picture.explicit && "imageSensible"}`}
-          src={arne}
-          draggable="false"
-          onMouseOver={() => handleMouseOver(picture.desc, picture.year)}
-          onMouseLeave={handleMouseLeave}
-        />
-        <ExportOutlined className="imageExpand" />
+      <div
+        className="imageContainer"
+        onMouseOver={() => handleMouseOver(picture.desc, picture.year)}
+        onMouseLeave={handleMouseLeave}
+      >
+        {loading ? (
+          <Spin
+            indicator={<LoadingOutlined spin />}
+            size="large"
+            className="imageLoading"
+          />)
+          :
+          (<img
+            className={`image ${!pageStore.showSensiblePictures && picture.explicit && "imageSensible"}`}
+            src={image}
+            draggable="false"
+          />)}
       </div>
     )
   });
