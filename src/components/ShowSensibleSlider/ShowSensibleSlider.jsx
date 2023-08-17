@@ -17,7 +17,7 @@ export const ShowSensibleSlider = observer(() => {
     return (
         <div className="showSensibleContainer">
             <div className="showSensibleText">
-                {isShown ? 'Hide' : 'Show'} sensible pictures
+                {isShown ? 'Hide' : 'Show'} explicit pictures
             </div>
             <Switch
                 size="small"

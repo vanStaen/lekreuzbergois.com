@@ -2,17 +2,37 @@
   cursor: grab;
   #image-track {
     display: flex;
-    gap: 4vmin;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(0%, -50%); 
     user-select: none; /* -- Prevent image highlighting -- */
     .image {
-      width: 33vmin;
+      width: 37vmin;
       height: 55vmin;
+      padding-left: 2vmin;
+      padding-right: 2vmin;
+      opacity: 1;
       object-fit: cover;
       object-position: 100% center;
+      transition: width .6s ease, opacity .6s ease, padding-left .6s ease, padding-right .6s ease;
+    }
+    .imageSensible {
+      width: 0;
+      opacity: 0;
+      padding-left: 0;
+      padding-right: 0;
     }
   }
+}
+
+.imageDescription {
+  width: 100vw;
+  position: absolute;
+  right: 0;
+  bottom: 5vh;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 5px;
 }
