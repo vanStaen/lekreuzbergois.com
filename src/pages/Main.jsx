@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import { observer } from "mobx-react-lite";
+import { ExportOutlined } from '@ant-design/icons';
 
 import { ShowSensibleSlider } from "../components/ShowSensibleSlider/ShowSensibleSlider";
 import { pageStore } from "../store/pageStore";
+import { pictureStore } from "../store/pictureStore";
 
 import arne from "../img/thumbs/arne.jpg";
 import aarhus from "../img/thumbs/aarhus.jpg";
@@ -85,30 +87,36 @@ export const Main = observer(() => {
     };
   }, [handleOnScroll]);
 
-  const handleMouseOver = (desc) => {
-    setImageDesc(desc);
+  const handleMouseOver = (desc, year) => {
+    const formatedDesc = <>{desc}<span className="imageDescriptionSepqarator"> - </span>{year}</>
+    setImageDesc(formatedDesc);
   }
 
   const handleMouseLeave = () => {
     setImageDesc(null)
   }
 
+  const picturesFormatted = pictureStore.pictures.map((picture) => {
+    return (
+      <div className="imageContainer">
+        <img
+          className={`image ${!pageStore.showSensiblePictures && picture.explicit && "imageSensible"}`}
+          src={arne}
+          draggable="false"
+          onMouseOver={() => handleMouseOver(picture.desc, picture.year)}
+          onMouseLeave={handleMouseLeave}
+        />
+        <ExportOutlined className="imageExpand" />
+      </div>
+    )
+  });
+
   return (
     <>
       <ShowSensibleSlider />
       <div className="image-container" id="image-container">
         <div id="image-track">
-          <img className="image" src={arne} draggable="false" onMouseOver={() => handleMouseOver('Klahs - 2014')} onMouseLeave={handleMouseLeave} />
-          <img className="image" src={see} draggable="false" onMouseOver={() => handleMouseOver('LustSee - 2019')} onMouseLeave={handleMouseLeave} />
-          <img className="image" src={hords} draggable="false" onMouseOver={() => handleMouseOver('HouseOfRedDoors - 2015')} onMouseLeave={handleMouseLeave} />
-          <img className="image" src={float} draggable="false" onMouseOver={() => handleMouseOver('MiraLykke - 2018')} onMouseLeave={handleMouseLeave} />
-          <img className="image" src={waet} draggable="false" onMouseOver={() => handleMouseOver('WeAreEnfantTerrible - 2009')} onMouseLeave={handleMouseLeave} />
-          <img className="image" src={halloween} draggable="false" onMouseOver={() => handleMouseOver('Halloween - 2018')} onMouseLeave={handleMouseLeave} />
-          <img className="image" src={skirt} draggable="false" onMouseOver={() => handleMouseOver('Autoportrait - 2020')} onMouseLeave={handleMouseLeave} />
-          <img className="image" src={feel} draggable="false" onMouseOver={() => handleMouseOver('FeetFestival - 2019')} onMouseLeave={handleMouseLeave} />
-          <img className={`image ${!pageStore.showSensiblePictures && "imageSensible"}`} src={dark} draggable="false" onMouseOver={() => handleMouseOver('Dark Editorial - 2023')} onMouseLeave={handleMouseLeave} />
-          <img className="image" src={aarhus} draggable="false" onMouseOver={() => handleMouseOver('Aarhus - 2021')} onMouseLeave={handleMouseLeave} />
-          <img className="image" src={mirror} draggable="false" onMouseOver={() => handleMouseOver('Mirror - 2022')} onMouseLeave={handleMouseLeave} />
+          {picturesFormatted}
         </div>
       </div>
       {imageDesc && <div className="imageDescription">{imageDesc}</div>}

@@ -7,21 +7,28 @@
     top: 50%;
     transform: translate(0%, -50%); 
     user-select: none; /* -- Prevent image highlighting -- */
-    .image {
-      width: 37vmin;
-      height: 55vmin;
-      padding-left: 2vmin;
-      padding-right: 2vmin;
-      opacity: 1;
-      object-fit: cover;
-      object-position: 100% center;
-      transition: width .6s ease, opacity .6s ease, padding-left .6s ease, padding-right .6s ease;
-    }
-    .imageSensible {
-      width: 0;
-      opacity: 0;
-      padding-left: 0;
-      padding-right: 0;
+    .imageContainer {
+      .imageExpand {
+        position: relative;
+        bottom: 50px;
+        left: 30px;
+      }
+      .image {
+        width: 37vmin;
+        height: 55vmin;
+        padding-left: 2vmin;
+        padding-right: 2vmin;
+        opacity: 1;
+        object-fit: cover;
+        object-position: 100% center;
+        transition: width .6s ease, opacity .6s ease, padding-left .6s ease, padding-right .6s ease;
+      }
+      .imageSensible {
+        width: 0;
+        opacity: 0;
+        padding-left: 0;
+        padding-right: 0;
+      }
     }
   }
 }
@@ -35,4 +42,7 @@
   font-size: 13px;
   font-weight: 300;
   letter-spacing: 5px;
+  .imageDescriptionSepqarator {
+    opacity: .3;
+  } 
 }
