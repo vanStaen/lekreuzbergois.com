@@ -47,7 +47,7 @@ export class PictureStore {
       id: 6,
       name: 'halloween',
       imgtype: 'jpg',
-      desc: 'Halloween',
+      desc: 'DeuxFrancs',
       year: 2018,
       explicit: false,
     },

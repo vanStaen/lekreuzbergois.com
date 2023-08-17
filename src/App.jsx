@@ -10,6 +10,7 @@ import { useTranslation } from "react-i18next";
 
 import { Main } from "./pages/Main";
 import { pageStore } from "./store/pageStore";
+import { LanguageDropDown } from "./components/LanguageDropDown/LanguageDropDown";
 
 import "../src/lib/i18n";
 import "./App.less";
@@ -46,6 +47,7 @@ const App = observer(() => {
   return (
     <div className="App">
       <div className="main">
+        <LanguageDropDown />
         <RouterProvider router={router} />
       </div>
     </div>

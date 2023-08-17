@@ -1,2 +1,9 @@
 {
+    "gallery": 
+    {
+        "doubleClickToExpend" : "double click to expend",
+        "show" : "Show",
+        "hide" : "Hide",
+        "explicitPictures" : "explicit pictures"
+    }
 }

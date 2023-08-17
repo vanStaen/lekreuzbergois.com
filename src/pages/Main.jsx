@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { LoadingOutlined } from "@ant-design/icons";
 import { observer } from "mobx-react-lite";
 import { Spin } from "antd";
@@ -16,6 +17,7 @@ export const Main = observer(() => {
   const mouseDownAt = useRef(0);
   const prevPercentage = useRef(0);
   const percentage = useRef(0);
+  const { t } = useTranslation();
 
   const elementForCursor = document.getElementById("image-container");
 
@@ -65,11 +67,12 @@ export const Main = observer(() => {
   };
 
   window.onmousedown = (e) => handleOnDown(e);
-  window.ontouchstart = (e) => handleOnDown(e.touches[0]);
   window.onmouseup = (e) => handleOnUp(e);
-  window.ontouchend = (e) => handleOnUp(e.touches[0]);
   window.onmousemove = (e) => handleOnMove(e);
-  window.ontouchmove = (e) => handleOnMove(e.touches[0]);
+  //TODO
+  //window.ontouchstart = (e) => handleOnDown(e.touches[0]);
+  //window.ontouchend = (e) => handleOnUp(e.touches[0]);
+  //window.ontouchmove = (e) => handleOnMove(e.touches[0]);
 
   useEffect(() => {
     document.addEventListener("wheel", handleOnScroll);
@@ -84,7 +87,9 @@ export const Main = observer(() => {
         {desc}
         <span className="imageDescriptionSeparator"> | </span>
         {year}
-        <div className="imageDescriptionInfoOpen">double click to open</div>
+        <div className="imageDescriptionInfoOpen">
+          {t("gallery.doubleClickToExpend")}
+        </div>
       </div>
     );
     setImageDesc(formatedDesc);

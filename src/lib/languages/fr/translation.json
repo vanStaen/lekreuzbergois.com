@@ -1,2 +1,9 @@
 {
+    "gallery": 
+    {
+        "doubleClickToExpend" : "double cliquez pour agrandir",
+        "show" : "Afficher",
+        "hide" : "Cacher",
+        "explicitPictures" : "les contenus explicites"
+    }
 }
