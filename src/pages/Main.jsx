@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from "react";
 
+import { ShowSensibleSlider } from "../components/ShowSensibleSlider/ShowSensibleSlider";
+
 import arne from "../img/thumbs/arne.jpg";
 import aarhus from "../img/thumbs/aarhus.jpg";
 import dark from "../img/thumbs/dark.jpg";
@@ -23,7 +25,6 @@ export const Main = () => {
   const elementForCursor = document.getElementById('image-container');
 
   const handleOnDown = (e) => {
-    console.log('elementForCursor', elementForCursor);
     mouseDownAt.current = e.clientX;
     elementForCursor.style.cursor = 'grabbing';
   };
@@ -82,21 +83,23 @@ export const Main = () => {
   }, [handleOnScroll]);
 
   return (
-    <div className="image-container" id="image-container">
-      <div id="image-track">
-        <img className="image" src={arne} draggable="false" />
-        <img className="image" src={see} draggable="false" />
-        <img className="image" src={hords} draggable="false" />
-        <img className="image" src={float} draggable="false" />
-        <img className="image" src={waet} draggable="false" />
-        <img className="image" src={halloween} draggable="false" />
-        <img className="image" src={skirt} draggable="false" />
-        <img className="image" src={feel} draggable="false" />
-        <img className="image" src={dark} draggable="false" />
-        <img className="image" src={aarhus} draggable="false" />
-        <img className="image" src={mirror} draggable="false" />
+    <>
+      <ShowSensibleSlider />
+      <div className="image-container" id="image-container">
+        <div id="image-track">
+          <img className="image" src={arne} draggable="false" />
+          <img className="image" src={see} draggable="false" />
+          <img className="image" src={hords} draggable="false" />
+          <img className="image" src={float} draggable="false" />
+          <img className="image" src={waet} draggable="false" />
+          <img className="image" src={halloween} draggable="false" />
+          <img className="image" src={skirt} draggable="false" />
+          <img className="image" src={feel} draggable="false" />
+          <img className="image" src={dark} draggable="false" />
+          <img className="image" src={aarhus} draggable="false" />
+          <img className="image" src={mirror} draggable="false" />
+        </div>
       </div>
-    </div>
-
+    </>
   );
 };
