@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-import { LoadingOutlined } from '@ant-design/icons';
+import { LoadingOutlined } from "@ant-design/icons";
 import { observer } from "mobx-react-lite";
-import { Spin } from 'antd';
+import { Spin } from "antd";
 
 import { ShowSensibleSlider } from "../components/ShowSensibleSlider/ShowSensibleSlider";
 import { pageStore } from "../store/pageStore";
@@ -17,17 +17,17 @@ export const Main = observer(() => {
   const prevPercentage = useRef(0);
   const percentage = useRef(0);
 
-  const elementForCursor = document.getElementById('image-container');
+  const elementForCursor = document.getElementById("image-container");
 
   const handleOnDown = (e) => {
     mouseDownAt.current = e.clientX;
-    elementForCursor.style.cursor = 'grabbing';
+    elementForCursor.style.cursor = "grabbing";
   };
 
   const handleOnUp = () => {
     mouseDownAt.current = 0;
     prevPercentage.current = percentage.current;
-    elementForCursor.style.cursor = 'grab';
+    elementForCursor.style.cursor = "grab";
   };
 
   const handleOnMove = (e) => {
@@ -60,6 +60,7 @@ export const Main = observer(() => {
   };
 
   const handleOnScroll = (e) => {
+    //TODO
     //console.log(e.deltaX);
   };
 
@@ -78,47 +79,66 @@ export const Main = observer(() => {
   }, [handleOnScroll]);
 
   const handleMouseOver = (desc, year) => {
-    const formatedDesc = <>{desc}<span className="imageDescriptionSepqarator"> | </span>{year}</>
+    const formatedDesc = (
+      <div>
+        {desc}
+        <span className="imageDescriptionSeparator"> | </span>
+        {year}
+        <div className="imageDescriptionInfoOpen">double click to open</div>
+      </div>
+    );
     setImageDesc(formatedDesc);
-  }
+  };
 
   const handleMouseLeave = () => {
-    setImageDesc(null)
-  }
+    setImageDesc(null);
+  };
+
+  const handleDoubleClick = (pictureId) => {
+    //TODO
+    console.log("pictureId", pictureId);
+  };
 
   const picturesFormatted = pictureStore.pictures.map((picture) => {
-
-    const { loading, image } = useImage(picture.name, 'img/thumbs', picture.imgtype)
+    const { loading, image } = useImage(
+      picture.name,
+      "img/thumbs",
+      picture.imgtype
+    );
 
     return (
       <div
         className="imageContainer"
         onMouseOver={() => handleMouseOver(picture.desc, picture.year)}
         onMouseLeave={handleMouseLeave}
+        onDoubleClick={() => handleDoubleClick(picture.id)}
       >
         {loading ? (
           <Spin
             indicator={<LoadingOutlined spin />}
             size="large"
             className="imageLoading"
-          />)
-          :
-          (<img
-            className={`image ${!pageStore.showSensiblePictures && picture.explicit && "imageSensible"}`}
+          />
+        ) : (
+          <img
+            className={`image ${
+              !pageStore.showSensiblePictures &&
+              picture.explicit &&
+              "imageSensible"
+            }`}
             src={image}
             draggable="false"
-          />)}
+          />
+        )}
       </div>
-    )
+    );
   });
 
   return (
     <>
       <ShowSensibleSlider />
       <div className="image-container" id="image-container">
-        <div id="image-track">
-          {picturesFormatted}
-        </div>
+        <div id="image-track">{picturesFormatted}</div>
       </div>
       {imageDesc && <div className="imageDescription">{imageDesc}</div>}
     </>

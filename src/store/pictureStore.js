@@ -3,7 +3,8 @@ import { makeObservable, observable, action } from "mobx";
 export class PictureStore {
 
   pictures = [
-    {
+    { 
+      id: 1,
       name: 'arne',
       imgtype: 'jpg',
       desc: 'Klahs',
@@ -11,6 +12,7 @@ export class PictureStore {
       explicit: false,
     },
     {
+      id: 2,
       name: 'see',
       imgtype: 'jpg',
       desc: 'LustSee',
@@ -18,6 +20,7 @@ export class PictureStore {
       explicit: false,
     },
     {
+      id: 3,
       name: 'hords',
       imgtype: 'png',
       desc: 'HouseOfRedDoors',
@@ -25,6 +28,7 @@ export class PictureStore {
       explicit: false,
     },
     {
+      id: 4,
       name: 'float',
       imgtype: 'jpg',
       desc: 'MiraLykke',
@@ -32,6 +36,7 @@ export class PictureStore {
       explicit: false,
     },
     {
+      id: 5,
       name: 'waet',
       imgtype: 'jpg',
       desc: 'WeAreEnfantTerrible',
@@ -39,6 +44,7 @@ export class PictureStore {
       explicit: false,
     },
     {
+      id: 6,
       name: 'halloween',
       imgtype: 'jpg',
       desc: 'Halloween',
@@ -46,6 +52,7 @@ export class PictureStore {
       explicit: false,
     },
     {
+      id: 7,
       name: 'skirt',
       imgtype: 'jpg',
       desc: 'Autoportrait',
@@ -53,6 +60,7 @@ export class PictureStore {
       explicit: false,
     },
     {
+      id: 8,
       name: 'feel',
       imgtype: 'jpg',
       desc: 'FeetFestival',
@@ -60,6 +68,7 @@ export class PictureStore {
       explicit: false,
     },
     {
+      id: 9,
       name: 'dark',
       imgtype: 'jpg',
       desc: 'DarkEditorial',
@@ -67,6 +76,7 @@ export class PictureStore {
       explicit: true,
     },
     {
+      id: 10,
       name: 'aarhus',
       imgtype: 'jpg',
       desc: 'Aarhus',
@@ -74,6 +84,7 @@ export class PictureStore {
       explicit: false,
     },
     {
+      id: 11,
       name: 'mirror',
       imgtype: 'jpg',
       desc: 'Mirror',
