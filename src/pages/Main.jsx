@@ -149,9 +149,12 @@ export const Main = observer(() => {
   return (
     <div className="mainContainer" id="mainContainer">
       <div className="noisyBackGround"></div>
-      <div className={`mainTitle ${showOverlay && "mainTitleGone"}`}>
-        <span className="mainTitleL">l</span>e{" "}
-        <span className="mainTitleK">K</span>reuzbergois
+      <div className="mainTitleContainer">
+        <div className={showOverlay ? "mainTitleGone" : "mainTitle"}>
+          <span className="mainTitleL">l</span>e{" "}
+          <span className="mainTitleK">K</span>reuzbergois
+          <div className="mainSubTitle">photographies</div>
+        </div>{" "}
       </div>
       {showOverlay && <Overlay setShowOverlay={setShowOverlay} />}
       <ShowSensibleSlider />

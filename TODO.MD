@@ -7,5 +7,6 @@
 - [ ] On Overlay open, center on selected picture
 - [ ] On overlay navigation, selected stays centered
 - [ ] Scroll allow to move gallery
-- [ ] Direct link to picture + link to 500px?
-- [ ] make nice background color 
+- [ ] Direct link to picture + link to 500px? 
+  - [ ] https://500px.com/licensing
+- [ ] gallery should be more responsive
