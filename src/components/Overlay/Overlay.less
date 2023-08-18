@@ -1,0 +1,151 @@
+.overlay__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+
+    .overlay__background {
+        background-color: rgba(0, 0, 0, .75);
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        z-index: 0;
+    }
+
+    .overlay__columnLeft,
+    .overlay__columnRight {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        width: 10%;
+        font-size: 2em;
+        cursor: pointer;
+    }
+
+    .overlay__columnRight {
+        right: 0;
+        height: 100vh;
+        z-index: 2;
+    }
+
+    .overlay__columnLeft {
+        left: 0;
+        height: 100vh;
+        z-index: 2;
+    }
+
+    .overlay__columnLeft:hover,
+    .overlay__columnRight:hover {
+        background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .overlay__closeButton {
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 10%;
+        height: 2.5em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 2em;
+        cursor: pointer;
+        z-index: 3;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .overlay__closeButton:hover {
+        background-color: rgba(107, 12, 5, 0.5);
+    }
+
+    .overlay__spinner {
+        color: #FFF;
+        z-index: 10;  
+        font-size: 10vh;
+    }
+
+
+    .overlay__pictureContainer {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        top: 0px;
+        user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none;
+
+        .overlay__infoAction {
+            width: 100%;
+            font-weight: 200;
+            letter-spacing: 2px;
+            font-size: .6em;
+            padding-bottom: .3em;
+            .overlay__info {
+                width: 17%;
+                padding-left: .3em;
+                display: inline-block;
+                text-align: left;
+                z-index: 10;
+                .overlay__id {
+                    opacity: .33;
+                }
+            }
+        }
+
+        .overlay__pictureHover {
+            position: absolute;
+            width: 100%;
+            height: 95%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+            -moz-user-select: none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            -o-user-select: none;
+            cursor: pointer;
+            z-index: 1;
+
+            .overlay__icon{
+                position: absolute;
+                font-size: 1em;
+                opacity: 0;
+                visibility: hidden;
+                transition: font-size 500ms, visibility 0s linear 0s, opacity 500ms;
+            }
+
+        }
+
+        .overlay__picture {
+            max-width: 75vw;
+            max-height: 80vh;
+            display: block;
+            user-select: none;
+            -moz-user-select: none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            -o-user-select: none;
+        }
+
+    }
+
+}

@@ -2,6 +2,7 @@ import { makeObservable, observable, action } from "mobx";
 
 export class PictureStore {
 
+  selectedPicture = null;
   pictures = [
     { 
       id: 1,
@@ -21,6 +22,14 @@ export class PictureStore {
     },
     {
       id: 3,
+      name: 'heels',
+      imgtype: 'jpg',
+      desc: 'Provocateur',
+      year: 2022,
+      explicit: true,
+    },
+    {
+      id: 4,
       name: 'hords',
       imgtype: 'png',
       desc: 'HouseOfRedDoors',
@@ -28,7 +37,7 @@ export class PictureStore {
       explicit: false,
     },
     {
-      id: 4,
+      id: 5,
       name: 'float',
       imgtype: 'jpg',
       desc: 'MiraLykke',
@@ -36,7 +45,7 @@ export class PictureStore {
       explicit: false,
     },
     {
-      id: 5,
+      id: 6,
       name: 'waet',
       imgtype: 'jpg',
       desc: 'WeAreEnfantTerrible',
@@ -44,7 +53,7 @@ export class PictureStore {
       explicit: false,
     },
     {
-      id: 6,
+      id: 7,
       name: 'halloween',
       imgtype: 'jpg',
       desc: 'DeuxFrancs',
@@ -52,7 +61,7 @@ export class PictureStore {
       explicit: false,
     },
     {
-      id: 7,
+      id: 8,
       name: 'skirt',
       imgtype: 'jpg',
       desc: 'Autoportrait',
@@ -60,7 +69,7 @@ export class PictureStore {
       explicit: false,
     },
     {
-      id: 8,
+      id: 9,
       name: 'feel',
       imgtype: 'jpg',
       desc: 'FeetFestival',
@@ -68,7 +77,7 @@ export class PictureStore {
       explicit: false,
     },
     {
-      id: 9,
+      id: 10,
       name: 'dark',
       imgtype: 'jpg',
       desc: 'DarkEditorial',
@@ -76,7 +85,7 @@ export class PictureStore {
       explicit: true,
     },
     {
-      id: 10,
+      id: 11,
       name: 'aarhus',
       imgtype: 'jpg',
       desc: 'Aarhus',
@@ -84,7 +93,7 @@ export class PictureStore {
       explicit: false,
     },
     {
-      id: 11,
+      id: 12,
       name: 'mirror',
       imgtype: 'jpg',
       desc: 'Mirror',
@@ -96,8 +105,15 @@ export class PictureStore {
   constructor() {
     makeObservable(this, {
       pictures: observable,
+      selectedPicture: observable,
+      setSelectedPicture: action,
     });
   }
+
+  setSelectedPicture = (selectedPictureId) => {
+    const picture = this.pictures.filter((picture) => picture.id === selectedPictureId);
+    this.selectedPicture = picture[0];
+  };
 
 }
 

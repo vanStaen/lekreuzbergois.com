@@ -7,12 +7,15 @@ import { Spin } from "antd";
 import { ShowSensibleSlider } from "../components/ShowSensibleSlider/ShowSensibleSlider";
 import { pageStore } from "../store/pageStore";
 import { pictureStore } from "../store/pictureStore";
-import useImage from "./useImage";
+import { Overlay } from "../components/Overlay/Overlay";
+
+import useImage from "../helpers/useImage.js";
 
 import "./Main.less";
 
 export const Main = observer(() => {
   const [imageDesc, setImageDesc] = useState(false);
+  const [showOverlay, setShowOverlay] = useState(false);
   const track = document.getElementById("image-track");
   const mouseDownAt = useRef(0);
   const prevPercentage = useRef(0);
@@ -99,9 +102,9 @@ export const Main = observer(() => {
     setImageDesc(null);
   };
 
-  const handleDoubleClick = (pictureId) => {
-    //TODO
-    console.log("pictureId", pictureId);
+  const handleDoubleClick = async (pictureId) => {
+    await pictureStore.setSelectedPicture(pictureId);
+    setShowOverlay(true);
   };
 
   const picturesFormatted = pictureStore.pictures.map((picture) => {
@@ -141,6 +144,7 @@ export const Main = observer(() => {
 
   return (
     <>
+      {showOverlay && <Overlay setShowOverlay={setShowOverlay} />}
       <ShowSensibleSlider />
       <div className="image-container" id="image-container">
         <div id="image-track">{picturesFormatted}</div>
