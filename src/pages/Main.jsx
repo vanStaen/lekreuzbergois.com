@@ -9,7 +9,7 @@ import { pageStore } from "../store/pageStore";
 import { pictureStore } from "../store/pictureStore";
 import { Overlay } from "../components/Overlay/Overlay";
 
-import useImage from "../helpers/useImage.js";
+import useImage from "../helpers/useImage";
 
 import "./Main.less";
 
@@ -129,15 +129,13 @@ export const Main = observer(() => {
           />
         ) : (
           <img
-            className={`image ${
-              !pageStore.showSensiblePictures &&
+            className={`image ${!pageStore.showSensiblePictures &&
               picture.explicit &&
               "imageSensible"
-            } ${
-              pageStore.showSensiblePictures &&
+              } ${pageStore.showSensiblePictures &&
               !picture.explicit &&
               "imageSensible"
-            }`}
+              }`}
             src={image}
             draggable="false"
           />
