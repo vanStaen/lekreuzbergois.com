@@ -13,10 +13,16 @@ export const ShowSensibleSlider = observer(() => {
 
   const slideHandler = (value) => {
     const mainContainerElement = document.getElementById("mainContainer");
+    const noisyBackGroundElement = document.getElementById("noisyBackGround");
+    const mainTitleElement = document.getElementById("mainTitle");
     if (value) {
       mainContainerElement.style.backgroundColor = "#151515";
+      noisyBackGroundElement.style.visibility = "visible";
+      mainTitleElement.style.color = "white";
     } else {
       mainContainerElement.style.backgroundColor = "transparent";
+      noisyBackGroundElement.style.visibility = "hidden";
+      mainTitleElement.style.color = "black";
     }
     pageStore.setShowSensiblePictures(value);
     setIsShown(value);
