@@ -9,7 +9,7 @@ import {
 import { observer } from "mobx-react";
 import { Tooltip } from "antd";
 
-import useImage from "../../helpers/useImage.js";
+import useImage from "../../helpers/useImage";
 import { pictureStore } from "../../store/pictureStore.js";
 
 import "./Overlay.less";
