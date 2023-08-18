@@ -15,11 +15,28 @@ import { pictureStore } from "../../store/pictureStore.js";
 import "./Overlay.less";
 
 export const Overlay = observer((props) => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [imageLoaded, setImageLoaded] = useState(null);
   const throttling = useRef(false);
 
   const selected = pictureStore.selectedPicture;
   const { image } = useImage(selected.name, "img", selected.imgtype);
+
+  const loadImage = async (image) => {
+    const isloaded = new Promise((resolve, reject) => {
+      const loadImg = new Image();
+      loadImg.src = image;
+      loadImg.onload = () => resolve(image.url);
+      loadImg.onerror = (err) => reject(err);
+    });
+    await isloaded;
+    setImageLoaded(image);
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    selected && image && loadImage(image);
+  }, [selected, image]);
 
   const mouseHoverHandler = (hover) => {
     const closeButton = document.getElementById(`closeButton`);
@@ -149,7 +166,7 @@ export const Overlay = observer((props) => {
 
           <img
             className="overlay__picture"
-            src={image}
+            src={imageLoaded}
             alt={selected.desc}
             key={`img__${selected.id}`}
           />
