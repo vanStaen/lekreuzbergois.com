@@ -1,60 +1,127 @@
-.image-container {
-  cursor: grab;
-  #image-track {
-    display: flex;
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Monsieur+La+Doulaise&family=Pinyon+Script&display=swap');
+
+.mainContainer {
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  transition: background-color .3s ease-in-out;
+  .noisyBackGround {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    width: 200%;
+    height: 200vh;
+    background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+    background-repeat: repeat;
+    animation: bg-animation .2s infinite;
+    opacity: .9;
+    visibility: visible;
+    @keyframes bg-animation {
+      0% { transform: translate(0,0) }
+      10% { transform: translate(-5%,-5%) }
+      20% { transform: translate(-10%,5%) }
+      30% { transform: translate(5%,-10%) }
+      40% { transform: translate(-5%,15%) }
+      50% { transform: translate(-10%,5%) }
+      60% { transform: translate(15%,0) }
+      70% { transform: translate(0,10%) }
+      80% { transform: translate(-15%,0) }
+      90% { transform: translate(10%,5%) }
+      100% { transform: translate(5%,0) }
+    }
+  }
+  .mainTitle {
+    //font-family: Baskerville;
+    width: 100vw;
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(0%, -50%); 
-    user-select: none; /* -- Prevent image highlighting -- */
-    .imageContainer {
-      text-align: center;
+    right: 0;
+    top: 8vh;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: 5px;
+    opacity: 1;
+    transition: opacity .3s ease-in-out;
+    .mainTitleL {
+      visibility: visible;
+      //letter-spacing: 3px;
+      //font-size: 27px;
+      //text-transform: capitalize;
+      //font-family: 'Great Vibes', cursive;
+    }
+    .mainTitleK {
+      vertical-align: middle;
+      letter-spacing: 5px;
+      font-size: 52px;
+      font-family: 'Monsieur La Doulaise', cursive;
+    }
+  }
+  .mainTitleGone {
+    opacity: 0;
+  }
+
+  .image-container {
+    cursor: grab;
+    #image-track {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      .image {
-        width: 37vmin;
-        height: 55vmin;
-        padding-left: 2vmin;
-        padding-right: 2vmin;
-        opacity: 1;
-        object-fit: cover;
-        object-position: 100% center;
-        transition: width .6s ease, opacity .6s ease, padding-left .6s ease, padding-right .6s ease;
-      }
-      .imageLoading {
-        color: white;
-        width: 37vmin;
-        height: 55vmin;
-        padding-left: 2vmin;
-        padding-right: 2vmin;
-      }
-      .imageSensible {
-        width: 0;
-        opacity: 0;
-        padding-left: 0;
-        padding-right: 0;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(0%, -50%); 
+      user-select: none; /* -- Prevent image highlighting -- */
+      .imageContainer {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .image {
+          width: 37vmin;
+          height: 55vmin;
+          margin-left: 2vmin;
+          margin-right: 2vmin;
+          opacity: 1;
+          object-fit: cover;
+          object-position: 100% center;
+          box-shadow: rgb(33, 33, 33) 0px 20px 30px -10px;
+          transition: width .6s ease, opacity .6s ease, margin-left .6s ease, margin-right .6s ease;
+        }
+        .imageLoading {
+          color: white;
+          width: 37vmin;
+          height: 55vmin;
+          margin-left: 2vmin;
+          margin-right: 2vmin;
+        }
+        .imageSensible {
+          width: 0;
+          opacity: 0;
+          margin-left: 0;
+          margin-right: 0;
+        }
       }
     }
   }
-}
 
-.imageDescription {
-  width: 100vw;
-  position: absolute;
-  right: 0;
-  bottom: 5vh;
-  text-align: center;
-  font-size: 13px;
-  font-weight: 300;
-  letter-spacing: 5px;
-  .imageDescriptionSeparator {
-    opacity: .2;
-  } 
-  .imageDescriptionInfoOpen {
-    opacity: .2;
-    padding-top: 10px;
-    letter-spacing: 2px;
-  } 
+  .imageDescription {
+    width: 100vw;
+    position: absolute;
+    right: 0;
+    bottom: 5vh;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 5px;
+    .imageDescriptionSeparator {
+      opacity: .2;
+    } 
+    .imageDescriptionInfoOpen {
+      opacity: .2;
+      padding-top: 10px;
+      letter-spacing: 2px;
+    } 
+  }
 }

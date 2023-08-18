@@ -12,6 +12,12 @@ export const ShowSensibleSlider = observer(() => {
   const [isShown, setIsShown] = useState();
 
   const slideHandler = (value) => {
+    const mainContainerElement = document.getElementById("mainContainer");
+    if (value) {
+      mainContainerElement.style.backgroundColor = "#151515";
+    } else {
+      mainContainerElement.style.backgroundColor = "transparent";
+    }
     pageStore.setShowSensiblePictures(value);
     setIsShown(value);
   };

@@ -133,6 +133,10 @@ export const Main = observer(() => {
               !pageStore.showSensiblePictures &&
               picture.explicit &&
               "imageSensible"
+            } ${
+              pageStore.showSensiblePictures &&
+              !picture.explicit &&
+              "imageSensible"
             }`}
             src={image}
             draggable="false"
@@ -143,13 +147,18 @@ export const Main = observer(() => {
   });
 
   return (
-    <>
+    <div className="mainContainer" id="mainContainer">
+      <div className="noisyBackGround"></div>
+      <div className={`mainTitle ${showOverlay && "mainTitleGone"}`}>
+        <span className="mainTitleL">l</span>e{" "}
+        <span className="mainTitleK">K</span>reuzbergois
+      </div>
       {showOverlay && <Overlay setShowOverlay={setShowOverlay} />}
       <ShowSensibleSlider />
       <div className="image-container" id="image-container">
         <div id="image-track">{picturesFormatted}</div>
       </div>
       {imageDesc && <div className="imageDescription">{imageDesc}</div>}
-    </>
+    </div>
   );
 });
