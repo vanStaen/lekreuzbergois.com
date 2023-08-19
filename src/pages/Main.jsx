@@ -8,6 +8,7 @@ import { ShowSensibleSlider } from "../components/ShowSensibleSlider/ShowSensibl
 import { pageStore } from "../store/pageStore";
 import { pictureStore } from "../store/pictureStore";
 import { Overlay } from "../components/Overlay/Overlay";
+import { Title } from "../components/Title/Title";
 
 import useImage from "../helpers/useImage";
 
@@ -149,14 +150,7 @@ export const Main = observer(() => {
   return (
     <div className="mainContainer" id="mainContainer">
       <div className="noisyBackGround" id="noisyBackGround"></div>
-      <div
-        className={showOverlay ? "mainTitleGone" : "mainTitle"}
-        id="mainTitle"
-      >
-        <span className="mainTitleL">l</span>e
-        <span className="mainTitleK">K</span>reuzbergois
-        <div className="mainSubTitle">photographies</div>
-      </div>
+      <Title showOverlay={showOverlay} />
       {showOverlay && <Overlay setShowOverlay={setShowOverlay} />}
       <ShowSensibleSlider />
       <div className="image-container" id="image-container">
