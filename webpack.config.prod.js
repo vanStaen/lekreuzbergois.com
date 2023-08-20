@@ -11,8 +11,8 @@ module.exports = {
   entry: { index: "./src/index.js", sw: "./src/sw.js" },
   mode: "production",
   output: {
-    path: path.resolve(__dirname, "build"),
-    publicPath: "/",
+    filename: 'bundle.js',
+    path: '/',
   },
   plugins: [
     new HtmlWebpackPlugin({
