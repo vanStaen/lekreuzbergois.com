@@ -19,7 +19,7 @@ module.exports = {
       template: "./public/index.html",
     }),
     new webpack.DefinePlugin({
-      "process.env.API_URL": JSON.stringify("https://www.lekreuzbergois.com")
+      "process.env.API_URL": JSON.stringify("https://vanstaen.github.io/lekreuzbergois/")
     }),
     new CopyPlugin({
       patterns: [
