@@ -41,14 +41,15 @@ const App = observer(() => {
   }, [pageStore.language, i18n]);
 
   const router = createBrowserRouter(
-    createRoutesFromElements(<Route path="/" element={<Main />}></Route>)
+    createRoutesFromElements(<Route path="./" element={<Main />}></Route>)
   );
 
   return (
     <div className="App">
       <div className="main">
         <LanguageDropDown />
-        <RouterProvider router={router} />
+        {/*<RouterProvider router={router} />*/}
+        <Main />
       </div>
     </div>
   );
