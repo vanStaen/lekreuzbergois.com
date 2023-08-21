@@ -6,10 +6,7 @@
   "author": "vanStaen",
   "homepage": "https://github.com/vanStaen/lekreuzbergois",
   "scripts": {
-    "devfr": "webpack serve --config webpack.config.dev.js --hot --open",
-    "dev": "nodemon server/index.js",
-    "server": "npm run build; pm2 start server/index.js",
-    "start": "node server/index.js",
+    "start": "webpack serve --config webpack.config.dev.js --hot --open",
     "prebuild": "rm -rf ./build",
     "build": "webpack --config webpack.config.prod.js --mode production",
     "predeploy" : "npm run build",
