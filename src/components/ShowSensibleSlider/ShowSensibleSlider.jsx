@@ -18,11 +18,11 @@ export const ShowSensibleSlider = observer(() => {
     if (value) {
       mainContainerElement.style.backgroundColor = "#151515";
       noisyBackGroundElement.style.visibility = "visible";
-      mainTitleElement.style.color = "white";
+      if (mainTitleElement) { mainTitleElement.style.color = "white" };
     } else {
       mainContainerElement.style.backgroundColor = "transparent";
       noisyBackGroundElement.style.visibility = "hidden";
-      mainTitleElement.style.color = "black";
+      if (mainTitleElement) { mainTitleElement.style.color = "black" };
     }
     pageStore.setShowSensiblePictures(value);
     setIsShown(value);

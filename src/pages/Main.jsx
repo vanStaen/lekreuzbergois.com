@@ -130,15 +130,10 @@ export const Main = observer(() => {
           />
         ) : (
           <img
-            className={`image ${
-              !pageStore.showSensiblePictures &&
+            className={`image ${!pageStore.showSensiblePictures &&
               picture.explicit &&
               "imageSensible"
-            } ${
-              pageStore.showSensiblePictures &&
-              !picture.explicit &&
-              "imageSensible"
-            }`}
+              }`}
             src={image}
             draggable="false"
           />
@@ -150,7 +145,7 @@ export const Main = observer(() => {
   return (
     <div className="mainContainer" id="mainContainer">
       <div className="noisyBackGround" id="noisyBackGround"></div>
-      <Title showOverlay={showOverlay} />
+      {/*<Title showOverlay={showOverlay} />*/}
       {showOverlay && <Overlay setShowOverlay={setShowOverlay} />}
       <ShowSensibleSlider />
       <div className="image-container" id="image-container">
