@@ -10,4 +10,3 @@
 - [ ] Direct link to picture + link to 500px? 
   - [ ] https://500px.com/licensing
 - [ ] gallery should be more responsive
-- [ ] overlay should be loading until picture is downloaded

@@ -3,8 +3,10 @@ import { makeObservable, observable, action } from "mobx";
 export class PictureStore {
 
   selectedPicture = null;
+  isPictureLoading = true;
+
   pictures = [
-    { 
+    {
       id: 1,
       name: 'arne',
       imgtype: 'jpg',
@@ -107,12 +109,25 @@ export class PictureStore {
       pictures: observable,
       selectedPicture: observable,
       setSelectedPicture: action,
+      isPictureLoading: observable,
+      setIsPictureLoading: action,
     });
   }
 
   setSelectedPicture = (selectedPictureId) => {
+    this.setIsPictureLoading(true);
+    if (selectedPictureId <= 0) {
+      selectedPictureId = this.pictures.length;
+    } else if (selectedPictureId > this.pictures.length) {
+      selectedPictureId = 1;
+    }
     const picture = this.pictures.filter((picture) => picture.id === selectedPictureId);
     this.selectedPicture = picture[0];
+  };
+
+
+  setIsPictureLoading = (isPictureLoading) => {
+    this.isPictureLoading = isPictureLoading;
   };
 
 }

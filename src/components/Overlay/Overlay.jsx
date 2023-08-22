@@ -15,7 +15,6 @@ import { pictureStore } from "../../store/pictureStore.js";
 import "./Overlay.less";
 
 export const Overlay = observer((props) => {
-  const [isLoading, setIsLoading] = useState(true);
   const [imageLoaded, setImageLoaded] = useState(null);
   const throttling = useRef(false);
 
@@ -31,7 +30,7 @@ export const Overlay = observer((props) => {
     });
     await isloaded;
     setImageLoaded(image);
-    setIsLoading(false);
+    pictureStore.setIsPictureLoading(false);
   };
 
   useEffect(() => {
@@ -58,13 +57,13 @@ export const Overlay = observer((props) => {
       throttling.current = true;
       if (keyPressed === "arrowdown" || keyPressed === "arrowright") {
         nextButton.style.backgroundColor = "rgba(255,255,255,.15)";
-        //pictureStore.changeSelected(true);
+        pictureStore.setSelectedPicture(selected.id + 1);
         setTimeout(() => {
           nextButton.style.backgroundColor = "rgba(255,255,255, 0)";
         }, 100);
       } else if (keyPressed === "arrowup" || keyPressed === "arrowleft") {
         previousButton.style.backgroundColor = "rgba(255,255,255,.15)";
-        //pictureStore.changeSelected(false);
+        pictureStore.setSelectedPicture(selected.id - 1);
         setTimeout(() => {
           previousButton.style.backgroundColor = "rgba(255,255,255, 0)";
         }, 100);
@@ -94,7 +93,7 @@ export const Overlay = observer((props) => {
       linkLogo.style.opacity = 0;
       linkLogo.style.fontSize = "1em";
     }, 500);
-    const link = `http://kinkograph.com/${selected.key}`;
+    const link = `http://lekreuzbergois.com/picture/${selected.key}`;
     navigator.clipboard.writeText(link).then(
       function () {
         console.log("Copying to clipboard was successful!");
@@ -117,7 +116,7 @@ export const Overlay = observer((props) => {
         className="overlay__columnLeft"
         id="previousButton"
         onClick={() => {
-          //pictureStore.changeSelected(false);
+          pictureStore.setSelectedPicture(selected.id - 1);
         }}
       >
         <LeftOutlined />
@@ -128,7 +127,7 @@ export const Overlay = observer((props) => {
         onMouseEnter={() => mouseHoverHandler(true)}
         onMouseLeave={() => mouseHoverHandler(false)}
         onClick={() => {
-          //pictureStore.changeSelected(true);
+          pictureStore.setSelectedPicture(selected.id + 1);
         }}
       >
         <RightOutlined />
@@ -143,7 +142,7 @@ export const Overlay = observer((props) => {
         <CloseOutlined />
       </div>
 
-      {isLoading ? (
+      {pictureStore.isPictureLoading ? (
         <LoadingOutlined className="overlay__spinner" />
       ) : (
         <div className="overlay__pictureContainer">
