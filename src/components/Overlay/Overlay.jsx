@@ -22,6 +22,7 @@ export const Overlay = observer((props) => {
   const { image } = useImage(selected.name, "img", selected.imgtype);
 
   const loadImage = async (image) => {
+    setImageLoaded(null);
     const isloaded = new Promise((resolve, reject) => {
       const loadImg = new Image();
       loadImg.src = image;
@@ -35,6 +36,8 @@ export const Overlay = observer((props) => {
 
   useEffect(() => {
     selected && image && loadImage(image);
+    console.log('selected', selected);
+    console.log('image', image);
   }, [selected, image]);
 
   const mouseHoverHandler = (hover) => {
@@ -57,13 +60,13 @@ export const Overlay = observer((props) => {
       throttling.current = true;
       if (keyPressed === "arrowdown" || keyPressed === "arrowright") {
         nextButton.style.backgroundColor = "rgba(255,255,255,.15)";
-        pictureStore.setSelectedPicture(selected.id + 1);
+        pictureStore.browsePicture(true);
         setTimeout(() => {
           nextButton.style.backgroundColor = "rgba(255,255,255, 0)";
         }, 100);
       } else if (keyPressed === "arrowup" || keyPressed === "arrowleft") {
         previousButton.style.backgroundColor = "rgba(255,255,255,.15)";
-        pictureStore.setSelectedPicture(selected.id - 1);
+        pictureStore.browsePicture(false);
         setTimeout(() => {
           previousButton.style.backgroundColor = "rgba(255,255,255, 0)";
         }, 100);
@@ -116,7 +119,7 @@ export const Overlay = observer((props) => {
         className="overlay__columnLeft"
         id="previousButton"
         onClick={() => {
-          pictureStore.setSelectedPicture(selected.id - 1);
+          pictureStore.browsePicture(false);
         }}
       >
         <LeftOutlined />
@@ -127,7 +130,7 @@ export const Overlay = observer((props) => {
         onMouseEnter={() => mouseHoverHandler(true)}
         onMouseLeave={() => mouseHoverHandler(false)}
         onClick={() => {
-          pictureStore.setSelectedPicture(selected.id + 1);
+          pictureStore.browsePicture(true);
         }}
       >
         <RightOutlined />
@@ -142,7 +145,7 @@ export const Overlay = observer((props) => {
         <CloseOutlined />
       </div>
 
-      {pictureStore.isPictureLoading ? (
+      {pictureStore.isPictureLoading || imageLoaded === null ? (
         <LoadingOutlined className="overlay__spinner" />
       ) : (
         <div className="overlay__pictureContainer">

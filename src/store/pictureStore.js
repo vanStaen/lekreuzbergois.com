@@ -1,4 +1,5 @@
 import { makeObservable, observable, action } from "mobx";
+import { pageStore } from "./pageStore";
 
 export class PictureStore {
 
@@ -111,20 +112,43 @@ export class PictureStore {
       setSelectedPicture: action,
       isPictureLoading: observable,
       setIsPictureLoading: action,
+      browsePicture: action,
     });
   }
 
-  setSelectedPicture = (selectedPictureId) => {
+  setSelectedPicture = (selectedPictureId, next) => {
     this.setIsPictureLoading(true);
-    if (selectedPictureId <= 0) {
-      selectedPictureId = this.pictures.length;
-    } else if (selectedPictureId > this.pictures.length) {
-      selectedPictureId = 1;
-    }
     const picture = this.pictures.filter((picture) => picture.id === selectedPictureId);
     this.selectedPicture = picture[0];
   };
 
+  browsePicture = (next) => {
+    this.setIsPictureLoading(true);
+    let picturesArray;
+    // Filter out explicit pictures if needee
+    if (!pageStore.showSensiblePictures) {
+      picturesArray = this.pictures.filter((picture) => picture.explicit === false);
+    } else {
+      picturesArray = this.pictures;
+    }
+    // get index of picture in array
+    let index = picturesArray.indexOf(this.selectedPicture);
+    // Increment selectedPictureId
+    if (next) {
+      index = index + 1
+    } else {
+      index = index - 1
+    }
+    // Loop back if at one end of object
+    if (index < 0) {
+      index = picturesArray.length - 1;
+    } else if (index > picturesArray.length - 1) {
+      index = 0;
+    }
+    // Return the correct image object
+    const picture = picturesArray[index];
+    this.selectedPicture = picture;
+  };
 
   setIsPictureLoading = (isPictureLoading) => {
     this.isPictureLoading = isPictureLoading;
