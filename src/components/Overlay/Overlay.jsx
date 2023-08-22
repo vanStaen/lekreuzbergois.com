@@ -36,8 +36,6 @@ export const Overlay = observer((props) => {
 
   useEffect(() => {
     selected && image && loadImage(image);
-    console.log('selected', selected);
-    console.log('image', image);
   }, [selected, image]);
 
   const mouseHoverHandler = (hover) => {
@@ -96,7 +94,7 @@ export const Overlay = observer((props) => {
       linkLogo.style.opacity = 0;
       linkLogo.style.fontSize = "1em";
     }, 500);
-    const link = `http://lekreuzbergois.com/picture/${selected.key}`;
+    const link = `http://lekreuzbergois.com/picture/${selected.id}`;
     navigator.clipboard.writeText(link).then(
       function () {
         console.log("Copying to clipboard was successful!");
@@ -157,7 +155,7 @@ export const Overlay = observer((props) => {
               >
                 <LinkOutlined onClick={copyLinkHandler} />
               </Tooltip>{" "}
-              <span className="overlay__id"> #{selected.id}</span>
+              <span className="overlay__id">  {selected.desc}</span>
             </div>
           </div>
 
