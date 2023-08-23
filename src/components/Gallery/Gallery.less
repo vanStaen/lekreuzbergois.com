@@ -1,0 +1,61 @@
+.gallery__imageContainer {
+    cursor: grab;
+    #image-track {
+        display: flex;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(0%, -50%); 
+        user-select: none; /* -- Prevent image highlighting -- */
+        .imageContainer {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .image {
+                width: 37vmin;
+                height: 55vmin;
+                margin-left: 2vmin;
+                margin-right: 2vmin;
+                opacity: 1;
+                object-fit: cover;
+                object-position: 100% center;
+                //box-shadow: rgb(33, 33, 33) 0px 20px 30px -10px;
+                transition: width .6s ease, opacity .6s ease, margin-left .6s ease, margin-right .6s ease;
+            }
+            .imageLoading {
+                color: white;
+                width: 37vmin;
+                height: 55vmin;
+                margin-left: 2vmin;
+                margin-right: 2vmin;
+            }
+            .imageSensible {
+                width: 0;
+                opacity: 0;
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+.gallery__imageDescription {
+    width: 100vw;
+    position: absolute;
+    right: 0;
+    bottom: 5vh;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 5px;
+    .imageDescriptionSeparator {
+        opacity: .2;
+    } 
+    .imageDescriptionInfoOpen {
+        opacity: .2;
+        padding-top: 10px;
+        letter-spacing: 2px;
+    } 
+}
