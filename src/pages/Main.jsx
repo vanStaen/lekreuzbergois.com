@@ -12,7 +12,7 @@ import "./Main.less"
 const THRESHOLD_IN_PX_BEFORE_SHOWING_MOBILE_GALLERY = 690;
 
 export const Main = observer(() => {
-  const [showMobileVersion, setShowMobileVersion] = useState(isMobileCheck());
+  const [showMobileVersion, setShowMobileVersion] = useState(isMobileCheck() || window.innerWidth < THRESHOLD_IN_PX_BEFORE_SHOWING_MOBILE_GALLERY);
 
   const checkIfSmallScreen = () => {
     if (window.innerWidth < THRESHOLD_IN_PX_BEFORE_SHOWING_MOBILE_GALLERY || isMobileCheck()) {
