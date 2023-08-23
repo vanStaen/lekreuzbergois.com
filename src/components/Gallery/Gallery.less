@@ -1,5 +1,6 @@
 .gallery__imageContainer {
     cursor: grab;
+    overflow: hidden;
     #image-track {
         display: flex;
         position: absolute;
@@ -30,6 +31,12 @@
                 height: 55vmin;
                 margin-left: 2vmin;
                 margin-right: 2vmin;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid rgba(255,255,255,.2);
             }
             .imageSensible {
                 width: 0;
@@ -58,17 +65,4 @@
         padding-top: 10px;
         letter-spacing: 2px;
     } 
-}
-
-.galleryMobile__container {
-    width: 100vw;
-    height: 100vh;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    font-weight: 300;
-    letter-spacing: 2px;
 }

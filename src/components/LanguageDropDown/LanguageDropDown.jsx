@@ -12,55 +12,45 @@ export const LanguageDropDown = () => {
     initLanguage === "US" ? "EN" : initLanguage
   );
 
-  const onLanguageChangeHandler = (value) => {
-    if (value === "en") {
+  const onClick = ({ key }) => {
+    if (key === "en") {
       i18n.changeLanguage("en-US");
       setLanguage("EN");
-    } else if (value === "de") {
+    } else if (key === "de") {
       i18n.changeLanguage("de-DE");
       setLanguage("DE");
-    } else if (value === "fr") {
+    } else if (key === "fr") {
       i18n.changeLanguage("fr-FR");
       setLanguage("FR");
     }
   };
 
-  const menu = (
-    <Menu>
-      <Menu.Item
-        onClick={() => {
-          onLanguageChangeHandler("en");
-        }}
-      >
-        <div className="languageDropdown__item">EN</div>
-      </Menu.Item>
-      <Menu.Item
-        onClick={() => {
-          onLanguageChangeHandler("de");
-        }}
-      >
-        <div className="languageDropdown__item">DE</div>
-      </Menu.Item>
-      <Menu.Item
-        onClick={() => {
-          onLanguageChangeHandler("fr");
-        }}
-      >
-        <div className="languageDropdown__item">FR</div>
-      </Menu.Item>
-    </Menu>
-  );
+  const items = [
+    {
+      key: 'en',
+      label: 'EN',
+    },
+    {
+      key: 'de',
+      label: 'DE',
+    },
+    {
+      key: 'fr',
+      label: 'FR',
+    },
+  ]
+
+
 
   return (
     <div className="languageDropdown">
-      <Dropdown overlay={menu} trigger={"click"}>
+      <Dropdown menu={{ items, onClick }} trigger={"click"} inlineIndent={0}>
         <a
-          className="ant-dropdown-link"
           onClick={(e) => {
             e.preventDefault();
           }}
         >
-          {language}
+          <span style={{ paddingLeft: "7px" }}>{language}</span>
           <DownOutlined />
         </a>
       </Dropdown>

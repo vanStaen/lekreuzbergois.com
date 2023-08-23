@@ -4,21 +4,29 @@
   top: 5px;
   left: 0;
   color: rgba(255,255,255,1);
-  margin: 15px 25px;
+  margin: 10px 10px;
   font-weight: 300;
-  font-size: 20px;
-  letter-spacing: 2.5px;
+  font-size: 14px;
+  letter-spacing: 3px;
+  font-weight: 300;
   cursor: pointer;
   
   .anticon-down {
-    color: rgba(255,255,255, .25);
+    color: rgba(255,255,255, .5);
   }
-  
-  .languageDropdown__item {
-    font-size: 17px;
-    font-weight: 300;
-    &:hover {
-      font-weight: 500;
+}
+
+.ant-dropdown {
+  .ant-dropdown-menu {
+    border-radius: 4px;
+    margin-top: 3px;
+    background-color: rgba(255,255,255, .9);
+    .ant-dropdown-menu-item {
+      font-size: 14px;
+      font-weight: 400;
+      &:hover {
+        font-weight: 500;
+      }
     }
   }
 }
