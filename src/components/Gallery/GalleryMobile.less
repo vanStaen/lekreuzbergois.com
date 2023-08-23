@@ -1,5 +1,7 @@
 
 .galleryMobile__container{
+    position: relative;
+    z-index: 1;
     width: 100vw;
     min-height: 100vh;
     padding: 10vh 0 20px 0;
@@ -15,8 +17,8 @@
     .galleryMobile__imageContainer{
 
         .galleryMobile__imageLoading {
-            width: 90vw;
-            height: 90vw;
+            width: 100vw;
+            height: 100vw;
             color: white;
             text-align: center;
             display: flex;
@@ -27,8 +29,8 @@
         }
 
         .galleryMobile__image {
-            width: 90vw;
-            height: 90vw;
+            width: calc(100vw - 30px);
+            height: 100vw;
             margin: 20px;
             opacity: 1;
             object-fit: cover;
