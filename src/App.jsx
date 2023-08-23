@@ -11,6 +11,7 @@ import { useTranslation } from "react-i18next";
 import { Main } from "./pages/Main";
 import { pageStore } from "./store/pageStore";
 import { LanguageDropDown } from "./components/LanguageDropDown/LanguageDropDown";
+import { inspectGreetings } from "./helpers/inspectGreetings";
 
 import "../src/lib/i18n";
 import "./App.less";
@@ -28,6 +29,10 @@ const App = observer(() => {
   useLayoutEffect(() => {
     // Define variable height
     defineVariableHeight();
+  }, []);
+
+  useEffect(() => {
+    inspectGreetings();
   }, []);
 
   useEffect(() => {
