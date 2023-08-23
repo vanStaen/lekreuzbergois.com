@@ -57,7 +57,7 @@ export const GalleryMobile = observer(() => {
             <div className="galleryMobile__container">
                 {picturesFormatted}
             </div>
-            {showOverlay && <Overlay setShowOverlay={setShowOverlay} />}
+            {showOverlay && <Overlay setShowOverlay={setShowOverlay} isMobile={true} />}
         </>
     );
 });

@@ -113,35 +113,37 @@ export const Overlay = observer((props) => {
           props.setShowOverlay(false);
         }}
       ></div>
-      <div
-        className="overlay__columnLeft"
-        id="previousButton"
-        onClick={() => {
-          pictureStore.browsePicture(false);
-        }}
-      >
-        <LeftOutlined />
-      </div>
-      <div
-        className="overlay__columnRight"
-        id="nextButton"
-        onMouseEnter={() => mouseHoverHandler(true)}
-        onMouseLeave={() => mouseHoverHandler(false)}
-        onClick={() => {
-          pictureStore.browsePicture(true);
-        }}
-      >
-        <RightOutlined />
-      </div>
-      <div
-        className="overlay__closeButton"
-        id="closeButton"
-        onClick={() => {
-          props.setShowOverlay(false);
-        }}
-      >
-        <CloseOutlined />
-      </div>
+      {!props.isMobile && <>
+        <div
+          className="overlay__columnLeft"
+          id="previousButton"
+          onClick={() => {
+            pictureStore.browsePicture(false);
+          }}
+        >
+          <LeftOutlined />
+        </div>
+        <div
+          className="overlay__columnRight"
+          id="nextButton"
+          onMouseEnter={() => mouseHoverHandler(true)}
+          onMouseLeave={() => mouseHoverHandler(false)}
+          onClick={() => {
+            pictureStore.browsePicture(true);
+          }}
+        >
+          <RightOutlined />
+        </div>
+        <div
+          className="overlay__closeButton"
+          id="closeButton"
+          onClick={() => {
+            props.setShowOverlay(false);
+          }}
+        >
+          <CloseOutlined />
+        </div>
+      </>}
 
       {pictureStore.isPictureLoading || imageLoaded === null ? (
         <LoadingOutlined className="overlay__spinner" />
