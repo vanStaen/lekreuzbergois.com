@@ -15,7 +15,7 @@ export const GalleryMobile = observer(() => {
     const [showOverlay, setShowOverlay] = useState(false);
     const { t } = useTranslation();
 
-    const handleDoubleClick = async (pictureId) => {
+    const handleClick = async (pictureId) => {
         await pictureStore.setSelectedPicture(pictureId);
         setShowOverlay(true);
     };
@@ -30,7 +30,7 @@ export const GalleryMobile = observer(() => {
         return (
             <div
                 className="galleryMobile__imageContainer"
-                onDoubleClick={() => handleDoubleClick(picture.id)}
+                onClick={() => handleClick(picture.id)}
             >
                 {loading ? (
                     <Spin
