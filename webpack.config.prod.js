@@ -25,6 +25,7 @@ module.exports = {
       patterns: [
         { from: "public/avatar.jpg" },
         { from: "public/manifest.webmanifest" },
+        { from: "public/CNAME" },
       ],
     }),
   ],
