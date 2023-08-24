@@ -46,6 +46,8 @@ export const PinInput = observer(() => {
             setIsNope(false);
             var target = event.srcElement;
             target.value = "";
+        } else if (event.key === 'Escape') {
+            pageStore.setShowPinInput(false);
         } else {
             //emptying the cell in keyDown
             var target = event.srcElement;
@@ -77,19 +79,21 @@ export const PinInput = observer(() => {
     }
 
     useEffect(() => {
-        document.addEventListener("keyup", keyUpHandler);
-        document.addEventListener("keydown", keyDownHandler);
+        const pinCode = document.getElementById("pin-code");
+        pinCode.addEventListener("keyup", keyUpHandler);
+        pinCode.addEventListener("keydown", keyDownHandler);
         return () => {
-            document.removeEventListener("keyup", keyUpHandler);
-            document.removeEventListener("keydown", keyDownHandler);
+            pinCode.removeEventListener("keyup", keyUpHandler);
+            pinCode.removeEventListener("keydown", keyDownHandler);
         };
-    }, [keyDownHandler]);
+    }, [keyDownHandler, keyUpHandler]);
 
     return (
         <>
-            <div className="pin__background" onClick={() => pageStore.setShowPinInput(false)}></div>
-            <div className="pin__container">
-                <div className="pin-code">
+            <div className="pin__background" ></div>
+            <div className="pin__noiseBackground" ></div>
+            <div className="pin__container" onClick={() => pageStore.setShowPinInput(false)}>
+                <div id="pin-code" className="pin-code">
                     <input id="pin1" type="number" maxLength="1" onChange={onPinChangeHandler} autoFocus />
                     <input id="pin2" type="number" maxLength="1" onChange={onPinChangeHandler} />
                     <input id="pin3" type="number" maxLength="1" onChange={onPinChangeHandler} />

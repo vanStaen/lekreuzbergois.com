@@ -25,7 +25,7 @@ export const ShowSensibleSlider = observer(() => {
     const noisyBackGroundElement = document.getElementById("noisyBackGround");
     const mainTitleElement = document.getElementById("mainTitle");
     if (pageStore.showSensiblePictures) {
-      mainContainerElement.style.backgroundColor = "#000";
+      mainContainerElement.style.backgroundColor = "rgba(0,0,0,1)";
       noisyBackGroundElement.style.visibility = "visible";
       if (mainTitleElement) { mainTitleElement.style.color = "white" };
     } else {

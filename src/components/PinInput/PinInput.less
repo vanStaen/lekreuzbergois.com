@@ -2,7 +2,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 5;
+    z-index: 7;
     width: 100vw;
     height: 100vh;
     text-align: center;
@@ -10,7 +10,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, rgba(50,50,50, .9), rgba(0,0,0, 1));
 
     .pin-code { 
         padding: 0; 
@@ -50,7 +49,17 @@
 
 .pin__background {
     position: fixed;
-    z-index: 7;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(55,55,55, .5);
+}
+
+.pin__noiseBackground {
+    position: fixed;
+    z-index: 6;
     top: -50%;
     left: -50%;
     right: -50%;
@@ -58,7 +67,7 @@
     width: 200%;
     height: 200vh;
     background: transparent url('../../img/graphics/noise.png');
-    background-size: 50%;
+    background-size: 20%;
     animation: bg-animation .2s infinite;
     opacity: .9;
     @keyframes bg-animation {
