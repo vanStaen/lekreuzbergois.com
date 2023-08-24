@@ -5,5 +5,9 @@
         "show" : "Afficher",
         "hide" : "Cacher",
         "explicitPictures" : "les contenus explicites"
-    }
+    },
+    "pin": {
+        "nope": "non, merci",
+        "pressEnter": "appuye sur 'Entrer'"
+    } 
 }

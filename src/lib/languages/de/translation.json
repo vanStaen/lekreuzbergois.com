@@ -1,9 +1,13 @@
 {
-    "gallery": 
-    {
+    "gallery": {
         "doubleClickToExpend" : "double click to expend",
         "show" : "Zeigen",
         "hide" : "Verstecken",
         "explicitPictures" : "was explizit ist"
-    }
+    },
+    "pin": {
+        "nope": "nö, danke",
+        "pressEnter": "drück 'Enter'"
+    } 
 }
+

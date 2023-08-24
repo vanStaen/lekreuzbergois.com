@@ -7,6 +7,7 @@ import { Spin } from "antd";
 import { pictureStore } from "../../store/pictureStore";
 import { pageStore } from "../../store/pageStore";
 import { Overlay } from "../Overlay/Overlay";
+import { PinInput } from "../PinInput/PinInput";
 import useImage from "../../helpers/useImage";
 
 import './GalleryMobile.less';
@@ -57,6 +58,7 @@ export const GalleryMobile = observer(() => {
             <div className="galleryMobile__container">
                 {picturesFormatted}
             </div>
+            {pageStore.showPinInput && <PinInput />}
             {showOverlay && <Overlay setShowOverlay={setShowOverlay} isMobile={true} />}
         </>
     );

@@ -4,6 +4,7 @@ export class PageStore {
 
   language = navigator.language || navigator.userLanguage;
   showSensiblePictures = false;
+  showPinInput = false;
 
   constructor() {
     makeObservable(this, {
@@ -11,6 +12,8 @@ export class PageStore {
       setLanguage: action,
       showSensiblePictures: observable,
       setShowSensiblePictures: action,
+      showPinInput: observable,
+      setShowPinInput: action,
     });
   }
 
@@ -20,6 +23,10 @@ export class PageStore {
 
   setShowSensiblePictures = (showSensiblePictures) => {
     this.showSensiblePictures = showSensiblePictures;
+  };
+
+  setShowPinInput = (showPinInput) => {
+    this.showPinInput = showPinInput;
   };
 
 }

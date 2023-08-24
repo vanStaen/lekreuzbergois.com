@@ -7,6 +7,7 @@ import { Spin } from "antd";
 import { pageStore } from "../../store/pageStore";
 import { pictureStore } from "../../store/pictureStore";
 import { Overlay } from "../Overlay/Overlay";
+import { PinInput } from "../PinInput/PinInput";
 import useImage from "../../helpers/useImage";
 
 import './Gallery.less';
@@ -129,6 +130,7 @@ export const Gallery = observer(() => {
             <div className="gallery__imageContainer" id="image-container">
                 <div id="image-track">{picturesFormatted}</div>
             </div>
+            {pageStore.showPinInput && <PinInput />}
             {showOverlay && <Overlay setShowOverlay={setShowOverlay} />}
             {imageDesc && <div className="gallery__imageDescription">{imageDesc}</div>}
         </>)

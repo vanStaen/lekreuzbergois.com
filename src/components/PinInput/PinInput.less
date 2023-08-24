@@ -1,30 +1,77 @@
-h1 { 
-    font-family: helvetica;
-    text-align:center;
-}
-  
-.pin-code{ 
-    padding: 0; 
-    margin: 0 auto; 
+.pin__container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
     display: flex;
-    justify-content:center;
-    input { 
-        border: none; 
-        text-align: center; 
-        width: 48px;
-        height:48px;
-        font-size: 36px; 
-        background-color: #F3F3F3;
-        margin-right:5px;
-        &&:focus { 
-            border: 1px solid #573D8B;
-            outline:none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(50,50,50, .9), rgba(0,0,0, 1));
+
+    .pin-code { 
+        padding: 0; 
+        margin: 0 auto; 
+        display: flex;
+        justify-content:center;
+        input { 
+            border: none; 
+            text-align: center; 
+            width: 48px;
+            height:48px;
+            font-size: 36px; 
+            background-color: #F3F3F3;
+            margin-right:5px;
+            border: 1px solid rgba(0, 0, 0, 0);
+            &:focus { 
+                border: 2px solid rgba(150, 0, 0, .99);
+                outline: none;
+            } 
         } 
     } 
-} 
-  
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+      
+    .pin__info {
+        margin-top: 20px;
+        height: 20px;
+        font-size: 14px;
+        font-weight: 300;
+        letter-spacing: 3px;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
+
+.pin__background {
+    position: fixed;
+    z-index: 7;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    width: 200%;
+    height: 200vh;
+    background: transparent url('../../img/graphics/noise.png');
+    background-size: 50%;
+    animation: bg-animation .2s infinite;
+    opacity: .9;
+    @keyframes bg-animation {
+      0% { transform: translate(0,0) }
+      10% { transform: translate(-5%,-5%) }
+      20% { transform: translate(-10%,5%) }
+      30% { transform: translate(5%,-10%) }
+      40% { transform: translate(-5%,15%) }
+      50% { transform: translate(-10%,5%) }
+      60% { transform: translate(15%,0) }
+      70% { transform: translate(0,10%) }
+      80% { transform: translate(-15%,0) }
+      90% { transform: translate(10%,5%) }
+      100% { transform: translate(5%,0) }
+    }
 }
