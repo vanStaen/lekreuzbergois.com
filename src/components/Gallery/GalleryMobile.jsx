@@ -8,6 +8,7 @@ import { pictureStore } from "../../store/pictureStore";
 import { pageStore } from "../../store/pageStore";
 import { Overlay } from "../Overlay/Overlay";
 import { PinInput } from "../PinInput/PinInput";
+import { Title } from "../Title/Title";
 import useImage from "../../helpers/useImage";
 
 import './GalleryMobile.less';
@@ -59,6 +60,7 @@ export const GalleryMobile = observer(() => {
     return (
         <>
             <div className="galleryMobile__container">
+                <Title />
                 {picturesFormatted}
             </div>
             {pageStore.showPinInput && <PinInput />}
