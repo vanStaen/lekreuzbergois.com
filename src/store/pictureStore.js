@@ -9,6 +9,14 @@ export class PictureStore {
   pictures = [
     {
       id: 1,
+      name: 'gliter',
+      imgtype: 'jpg',
+      desc: 'GliterBomb',
+      year: 2019,
+      explicit: true,
+    },
+    {
+      id: 2,
       name: 'arne',
       imgtype: 'jpg',
       desc: 'Klahs',
@@ -16,7 +24,7 @@ export class PictureStore {
       explicit: false,
     },
     {
-      id: 2,
+      id: 3,
       name: 'see',
       imgtype: 'jpg',
       desc: 'LustSee',
@@ -24,7 +32,7 @@ export class PictureStore {
       explicit: false,
     },
     {
-      id: 3,
+      id: 4,
       name: 'heels',
       imgtype: 'jpg',
       desc: 'Provocateur',
@@ -32,7 +40,7 @@ export class PictureStore {
       explicit: true,
     },
     {
-      id: 4,
+      id: 5,
       name: 'hords',
       imgtype: 'png',
       desc: 'HouseOfRedDoors',
@@ -40,7 +48,7 @@ export class PictureStore {
       explicit: false,
     },
     {
-      id: 5,
+      id: 6,
       name: 'float',
       imgtype: 'jpg',
       desc: 'MiraLykke',
@@ -48,7 +56,15 @@ export class PictureStore {
       explicit: false,
     },
     {
-      id: 6,
+      id: 7,
+      name: 'model',
+      imgtype: 'jpg',
+      desc: 'UndSieSiehtGutAus',
+      year: 2018,
+      explicit: true,
+    },
+    {
+      id: 8,
       name: 'waet',
       imgtype: 'jpg',
       desc: 'WeAreEnfantTerrible',
@@ -56,7 +72,7 @@ export class PictureStore {
       explicit: false,
     },
     {
-      id: 7,
+      id: 9,
       name: 'halloween',
       imgtype: 'jpg',
       desc: 'DeuxFrancs',
@@ -64,7 +80,7 @@ export class PictureStore {
       explicit: false,
     },
     {
-      id: 8,
+      id: 10,
       name: 'skirt',
       imgtype: 'jpg',
       desc: 'Autoportrait',
@@ -72,7 +88,7 @@ export class PictureStore {
       explicit: false,
     },
     {
-      id: 9,
+      id: 11,
       name: 'feel',
       imgtype: 'jpg',
       desc: 'FeetFestival',
@@ -80,7 +96,7 @@ export class PictureStore {
       explicit: false,
     },
     {
-      id: 10,
+      id: 12,
       name: 'dark',
       imgtype: 'jpg',
       desc: 'DarkEditorial',
@@ -88,7 +104,7 @@ export class PictureStore {
       explicit: false,
     },
     {
-      id: 11,
+      id: 13,
       name: 'aarhus',
       imgtype: 'jpg',
       desc: 'Aarhus',
@@ -96,7 +112,7 @@ export class PictureStore {
       explicit: false,
     },
     {
-      id: 12,
+      id: 14,
       name: 'mirror',
       imgtype: 'jpg',
       desc: 'Mirror',
@@ -125,12 +141,8 @@ export class PictureStore {
   browsePicture = (next) => {
     this.setIsPictureLoading(true);
     let picturesArray;
-    // Filter out explicit pictures if needee
-    if (!pageStore.showSensiblePictures) {
-      picturesArray = this.pictures.filter((picture) => picture.explicit === false);
-    } else {
-      picturesArray = this.pictures;
-    }
+    // Filter in/out explicit pictures
+    picturesArray = this.pictures.filter((picture) => picture.explicit === pageStore.showSensiblePictures);
     // get index of picture in array
     let index = picturesArray.indexOf(this.selectedPicture);
     // Increment selectedPictureId

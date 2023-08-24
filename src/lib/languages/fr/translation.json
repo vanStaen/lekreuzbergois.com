@@ -2,9 +2,8 @@
     "gallery": 
     {
         "doubleClickToExpend" : "double cliquez pour agrandir",
-        "show" : "Afficher",
-        "hide" : "Cacher",
-        "explicitPictures" : "les contenus explicites"
+        "showExplicit" : "Afficher contenus explicites",
+        "hideExplicit" : "Cacher contenus explicites"
     },
     "pin": {
         "nope": "non, merci",
