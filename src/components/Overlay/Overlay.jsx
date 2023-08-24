@@ -16,7 +16,37 @@ import "./Overlay.less";
 
 export const Overlay = observer((props) => {
   const [imageLoaded, setImageLoaded] = useState(null);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
   const throttling = useRef(false);
+
+  // the required distance between touchStart and touchEnd to be detected as a swipe
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e) => {
+    setTouchEnd(null); // otherwise the swipe is fired even with usual touch events
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX);
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    if (throttling.current === false) {
+      throttling.current = true;
+      if (isRightSwipe) {
+        pictureStore.browsePicture(false);
+      } else if (isLeftSwipe) {
+        pictureStore.browsePicture(true);
+      }
+      setTimeout(() => {
+        throttling.current = false;
+      }, 500);
+    }
+  };
 
   const selected = pictureStore.selectedPicture;
   const { image } = useImage(selected.name, "img", selected.imgtype);
@@ -106,7 +136,10 @@ export const Overlay = observer((props) => {
   };
 
   return (
-    <div className="overlay__overlay">
+    <div className="overlay__overlay"
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}>
       <div
         className="overlay__background"
         onClick={() => {
