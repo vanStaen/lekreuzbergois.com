@@ -209,7 +209,7 @@ export const Overlay = observer((props) => {
           <CloseOutlined id="unheart" className="overlay__icon" />
         </div>
 
-        {true ? (
+        {pictureStore.isPictureLoading || imageLoaded === null ? (
           <div className="overlay__pictureLoading">
             <LoadingOutlined className="overlay__spinner" />
           </div>
