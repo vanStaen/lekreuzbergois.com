@@ -21,13 +21,10 @@ export const ShowSensibleSlider = observer(() => {
 
   useEffect(() => {
     const mainContainerElement = document.getElementById("mainContainer");
-    const noisyBackGroundElement = document.getElementById("noisyBackGround");
     if (pageStore.showSensiblePictures) {
-      mainContainerElement.style.backgroundColor = "rgba(0,0,0,1)";
-      noisyBackGroundElement.style.visibility = "visible";
+      mainContainerElement.style.backgroundColor = "rgba(21,21,21,1)";
     } else {
       mainContainerElement.style.backgroundColor = "transparent";
-      noisyBackGroundElement.style.visibility = "hidden";
     }
     setIsShown(pageStore.showSensiblePictures);
   }, [pageStore.showSensiblePictures])

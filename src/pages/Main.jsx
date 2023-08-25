@@ -38,9 +38,7 @@ export const Main = observer(() => {
 
 
   return (
-    <div className="mainContainer" id="mainContainer">
-      <div className="noisyBackGround" id="noisyBackGround"></div>
-      {/*<Title showOverlay={showOverlay} />*/}
+    <div className="mainContainer" id="mainContainer" style={{ minHeight: window.innerHeight }}>
       <ShowSensibleSlider />
       {showMobileVersion ? <GalleryMobile /> : <Gallery />}
     </div>

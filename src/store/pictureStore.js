@@ -31,14 +31,14 @@ export class PictureStore {
       year: 2020,
       explicit: true,
     },
-    {
+    /*{
       id: 3,
       name: 'heels',
       imgtype: 'jpg',
       desc: 'Provocateur',
       year: 2022,
       explicit: true,
-    },
+    },*/
     {
       id: 4,
       name: 'hords',
