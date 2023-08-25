@@ -10,6 +10,7 @@ const TEMP_PIN = "1234"
 export const PinInput = observer(() => {
     const [isNope, setIsNope] = useState(false);
     const [isReadyToEnter, setIsReadyToEnter] = useState(false);
+    const [windowInnerHeight, setWindowInnerHeight] = useState(window.innerHeight)
     const { t } = useTranslation();
 
     const keyUpHandler = (event) => {
@@ -78,22 +79,28 @@ export const PinInput = observer(() => {
         }
     }
 
+    const resetWindowInnerHeight = () => {
+        setWindowInnerHeight(window.innerHeight);
+    }
+
     useEffect(() => {
         const pinCode = document.getElementById("pin-code");
         pinCode.addEventListener("keyup", keyUpHandler);
         pinCode.addEventListener("keydown", keyDownHandler);
+        window.addEventListener("resize", resetWindowInnerHeight);
         return () => {
             pinCode.removeEventListener("keyup", keyUpHandler);
             pinCode.removeEventListener("keydown", keyDownHandler);
+            window.removeEventListener("resize", resetWindowInnerHeight);
         };
-    }, [keyDownHandler, keyUpHandler]);
+    }, [keyDownHandler, keyUpHandler, resetWindowInnerHeight]);
 
     return (
         <>
-            <div className="pin__background" style={{ height: window.innerHeight }}></div>
+            <div className="pin__background" style={{ height: windowInnerHeight }}></div>
             <div className="pin__noiseBackground" ></div>
             <div className="pin__container"
-                style={{ height: window.innerHeight }}
+                style={{ height: windowInnerHeight }}
                 onClick={() => pageStore.setShowPinInput(false)}
             >
                 <div id="pin-code" className="pin-code">

@@ -20,7 +20,6 @@ export const ShowSensibleSlider = observer(() => {
   };
 
   useEffect(() => {
-    console.log('isShow')
     const mainContainerElement = document.getElementById("mainContainer");
     const noisyBackGroundElement = document.getElementById("noisyBackGround");
     if (pageStore.showSensiblePictures) {

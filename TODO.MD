@@ -11,3 +11,8 @@
 - [ ] Direct link to picture + link to 500px?
   - [ ] https://500px.com/licensing
 - [ ] Explicit is protected by a password
+  - [ ] Password is stored away from code
+  - [ ] Sensible phoso stored away from git
+  - [ ] how to get a/the code.
+- [ ] on mobile, scroll to top button
+- [ ] add impressum, contact, info

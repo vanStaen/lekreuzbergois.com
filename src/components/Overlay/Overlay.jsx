@@ -18,6 +18,7 @@ export const Overlay = observer((props) => {
   const [imageLoaded, setImageLoaded] = useState(null);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
+  const [windowInnerHeight, setWindowInnerHeight] = useState(window.innerHeight)
   const throttling = useRef(false);
 
   // the required distance between touchStart and touchEnd to be detected as a swipe
@@ -107,12 +108,18 @@ export const Overlay = observer((props) => {
     }
   };
 
+  const resetWindowInnerHeight = () => {
+    setWindowInnerHeight(window.innerHeight);
+  }
+
   useEffect(() => {
     document.addEventListener("keydown", keyDownHandler);
+    window.addEventListener("resize", resetWindowInnerHeight);
     return () => {
       document.removeEventListener("keydown", keyDownHandler);
+      window.removeEventListener("resize", resetWindowInnerHeight);
     };
-  }, [keyDownHandler]);
+  }, [keyDownHandler, resetWindowInnerHeight]);
 
   const copyLinkHandler = () => {
     const linkLogo = document.getElementById(`link`);
@@ -140,11 +147,11 @@ export const Overlay = observer((props) => {
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
-      style={{ height: window.innerHeight }}
+      style={{ height: windowInnerHeight }}
     >
       <div
         className="overlay__background"
-        style={{ height: window.innerHeight }}
+        style={{ height: windowInnerHeight }}
         onClick={() => {
           props.setShowOverlay(false);
         }}
@@ -152,7 +159,7 @@ export const Overlay = observer((props) => {
       {!props.isMobile && <>
         <div
           className="overlay__columnLeft"
-          style={{ height: window.innerHeight }}
+          style={{ height: windowInnerHeight }}
           id="previousButton"
           onClick={() => {
             pictureStore.browsePicture(false);
@@ -162,7 +169,7 @@ export const Overlay = observer((props) => {
         </div>
         <div
           className="overlay__columnRight"
-          style={{ height: window.innerHeight }}
+          style={{ height: windowInnerHeight }}
           id="nextButton"
           onMouseEnter={() => mouseHoverHandler(true)}
           onMouseLeave={() => mouseHoverHandler(false)}
