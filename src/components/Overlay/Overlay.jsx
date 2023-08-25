@@ -139,9 +139,12 @@ export const Overlay = observer((props) => {
     <div className="overlay__overlay"
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
-      onTouchEnd={onTouchEnd}>
+      onTouchEnd={onTouchEnd}
+      style={{ height: window.innerHeight }}
+    >
       <div
         className="overlay__background"
+        style={{ height: window.innerHeight }}
         onClick={() => {
           props.setShowOverlay(false);
         }}
@@ -149,6 +152,7 @@ export const Overlay = observer((props) => {
       {!props.isMobile && <>
         <div
           className="overlay__columnLeft"
+          style={{ height: window.innerHeight }}
           id="previousButton"
           onClick={() => {
             pictureStore.browsePicture(false);
@@ -158,6 +162,7 @@ export const Overlay = observer((props) => {
         </div>
         <div
           className="overlay__columnRight"
+          style={{ height: window.innerHeight }}
           id="nextButton"
           onMouseEnter={() => mouseHoverHandler(true)}
           onMouseLeave={() => mouseHoverHandler(false)}

@@ -59,7 +59,7 @@ export const GalleryMobile = observer(() => {
 
     return (
         <>
-            <div className="galleryMobile__container">
+            <div className="galleryMobile__container" style={{ minHeight: window.innerHeight }}>
                 <Title />
                 {picturesFormatted}
             </div>

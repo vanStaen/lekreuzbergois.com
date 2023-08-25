@@ -90,9 +90,12 @@ export const PinInput = observer(() => {
 
     return (
         <>
-            <div className="pin__background" ></div>
+            <div className="pin__background" style={{ height: window.innerHeight }}></div>
             <div className="pin__noiseBackground" ></div>
-            <div className="pin__container" onClick={() => pageStore.setShowPinInput(false)}>
+            <div className="pin__container"
+                style={{ height: window.innerHeight }}
+                onClick={() => pageStore.setShowPinInput(false)}
+            >
                 <div id="pin-code" className="pin-code">
                     <input id="pin1" type="number" maxLength="1" onChange={onPinChangeHandler} autoFocus />
                     <input id="pin2" type="number" maxLength="1" onChange={onPinChangeHandler} />
