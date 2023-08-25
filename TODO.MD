@@ -8,6 +8,8 @@
   - [ ] On Overlay open, center on selected picture
   - [ ] On overlay navigation, selected stays centered
   - [ ] Scroll allow to move gallery
+- [ ] Overlay, on mobile, a light swipe right/left 
+      shows the pic right/left coming for the side
 - [ ] Direct link to picture + link to 500px?
   - [ ] https://500px.com/licensing
 - [ ] Explicit is protected by a password
