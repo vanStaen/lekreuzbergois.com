@@ -190,35 +190,38 @@ export const Overlay = observer((props) => {
         </div>
       </>}
 
-      {pictureStore.isPictureLoading || imageLoaded === null ? (
-        <LoadingOutlined className="overlay__spinner" />
-      ) : (
-        <div className="overlay__pictureContainer">
-          <div className="overlay__infoAction">
-            <div className="overlay__info">
-              <Tooltip
-                placement="top"
-                title={<span>Copy a direct link to this picture</span>}
-              >
-                <LinkOutlined onClick={copyLinkHandler} />
-              </Tooltip>{" "}
-              <span className="overlay__id">  {selected.desc}</span>
-            </div>
-          </div>
 
-          <div className="overlay__pictureHover">
-            <LinkOutlined id="link" className="overlay__icon" />
-            <CloseOutlined id="unheart" className="overlay__icon" />
+      <div className="overlay__pictureContainer">
+        <div className="overlay__infoAction">
+          <div className="overlay__info">
+            <Tooltip
+              placement="top"
+              title={<span>Copy a direct link to this picture</span>}
+            >
+              <LinkOutlined onClick={copyLinkHandler} />
+            </Tooltip>{" "}
+            <span className="overlay__id">  {selected.desc}</span>
           </div>
+        </div>
 
+        <div className="overlay__pictureHover">
+          <LinkOutlined id="link" className="overlay__icon" />
+          <CloseOutlined id="unheart" className="overlay__icon" />
+        </div>
+
+        {true ? (
+          <div className="overlay__pictureLoading">
+            <LoadingOutlined className="overlay__spinner" />
+          </div>
+        ) : (
           <img
             className="overlay__picture"
             src={imageLoaded}
             alt={selected.desc}
             key={`img__${selected.id}`}
-          />
-        </div>
-      )}
+          />)}
+      </div>
+
     </div>
   );
 });
