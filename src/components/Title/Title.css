@@ -1,6 +1,7 @@
 @font-face {
   font-family: 'FetteHaenelFraktur';
-  src: url('./FetteHaenelFraktur.ttf') format('truetype');
+  src: url('./FetteHaenelFraktur.ttf') format('truetype'),
+       url('./FetteHaenelFraktur.woff2') format('woff2');
 }  
 
 .mainTitle {
