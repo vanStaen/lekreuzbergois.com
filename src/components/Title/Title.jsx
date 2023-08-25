@@ -1,6 +1,6 @@
 import React from "react";
-import "./Title.css";
+import "./Title.less";
 
-export const Title = (props) => {
+export const Title = () => {
   return <div className="mainTitle"> le Kreuzbergois</div>;
 };
