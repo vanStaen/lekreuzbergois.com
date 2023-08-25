@@ -5,8 +5,9 @@
         "hideExplicit" : "Explicit Inhalte ausblenden"
     },
     "pin": {
-        "nope": "nö, danke",
-        "pressEnter": "'Enter' drücken"
+        "nope": "Nö, Danke",
+        "pressEnter": "'Enter' Taste drücken",
+        "enterAccessCode" : "Zugangscode eingeben"
     } 
 }
 

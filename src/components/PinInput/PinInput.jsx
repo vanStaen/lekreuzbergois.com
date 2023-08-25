@@ -75,7 +75,14 @@ export const PinInput = observer(() => {
             if (pin1 + pin2 + pin3 + pin4 === TEMP_PIN) {
                 pageStore.setShowSensiblePictures(true);
                 pageStore.setShowPinInput(false);
-            } else { setIsNope(true) }
+            } else {
+                setIsNope(true);
+                document.getElementById("pin1").value = '';
+                document.getElementById("pin2").value = '';
+                document.getElementById("pin3").value = '';
+                document.getElementById("pin4").value = '';
+                document.getElementById("pin1").focus();
+            }
         }
     }
 
@@ -103,13 +110,14 @@ export const PinInput = observer(() => {
                 style={{ height: windowInnerHeight }}
                 onClick={() => pageStore.setShowPinInput(false)}
             >
+                <div className="pin__infoTop">{t('pin.enterAccessCode')}</div>
                 <div id="pin-code" className="pin-code">
                     <input id="pin1" type="number" maxLength="1" onChange={onPinChangeHandler} autoFocus />
                     <input id="pin2" type="number" maxLength="1" onChange={onPinChangeHandler} />
                     <input id="pin3" type="number" maxLength="1" onChange={onPinChangeHandler} />
                     <input id="pin4" type="number" maxLength="1" onChange={onPinChangeHandler} />
                 </div>
-                {<div className="pin__info">{isNope ? t('pin.nope') : isReadyToEnter && <>{t('pin.pressEnter')} &#9166;</>}</div>}
+                <div className="pin__infoBottom">{isNope ? t('pin.nope') : isReadyToEnter && <>{t('pin.pressEnter')} &#9166; </>}</div>
             </div>
         </>
     );

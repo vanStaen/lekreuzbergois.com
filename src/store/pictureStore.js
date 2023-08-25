@@ -24,6 +24,14 @@ export class PictureStore {
       explicit: false,
     },
     {
+      id: 16,
+      name: 'smoke',
+      imgtype: 'jpg',
+      desc: 'Klara Kristal',
+      year: 2020,
+      explicit: true,
+    },
+    {
       id: 3,
       name: 'heels',
       imgtype: 'jpg',

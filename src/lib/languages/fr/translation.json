@@ -6,7 +6,8 @@
         "hideExplicit" : "Cacher contenus explicites"
     },
     "pin": {
-        "nope": "non, merci",
-        "pressEnter": "appuye sur 'Entrer'"
+        "nope": "Non, Merci",
+        "pressEnter": "Appuyez sur 'Entrer'",
+        "enterAccessCode" : "Saissie du code d'accés"
     } 
 }

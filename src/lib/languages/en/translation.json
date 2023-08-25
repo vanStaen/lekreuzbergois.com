@@ -5,7 +5,9 @@
         "hideExplicit" : "Hide explicit pictures"
     },
     "pin": {
-        "nope": "nope, thanks",
-        "pressEnter": "press 'Enter'"
+        "nope": "Nope, Thanks",
+        "pressEnter": "Press 'Enter'",
+        "enterAccessCode" : "Input access code"
+        
     } 
 }
