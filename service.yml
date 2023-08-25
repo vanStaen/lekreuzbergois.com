@@ -1,9 +1,0 @@
-version: 2
-services:
-  schwerelos-berlin:
-    git_url: <https://github.com/vanStaen/clementvanstaen>
-    git_branch: master
-    ports:
-    - container: 5017
-      http: 80
-    dockerfile_path: Dockerfile

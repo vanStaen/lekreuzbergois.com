@@ -1,6 +1,6 @@
 # Le Kreuzbergois
 
-- [ ] BE initialisation
+- [ ] BE with www.cloudflare.com as BaaS? 
 - [ ] Gallery animation https://www.youtube.com/watch?v=PkADl0HubMY
 - [ ] Gallery:
   - [ ] If picture is in the middle of screen, it must be centered
