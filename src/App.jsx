@@ -50,7 +50,7 @@ const App = observer(() => {
   );
 
   return (
-    <div className="App" style={{ minHeight: window.innerHeight }}>
+    <div className="App">
       <div className="main">
         <LanguageDropDown />
         {/*<RouterProvider router={router} />*/}

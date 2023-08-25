@@ -3,14 +3,17 @@ body {
   font-family: "Helvetica Neue";
   margin: 0rem;
   overflow-x: hidden;
+  height: 100vh;
+  width: 100vw;
+  background-color: #141a18;
+  background-size: cover;
 }
 
 .App {
   font-size: min(calc(7px + 2vmin), 25px);
   color: white;
-  background-color: #141a18;
-  background-size: cover;
   /* Fallback for browsers that do not support Custom Properties */
+  min-height: 100vh;
   min-height: calc(var(--vh, 1vh) * 100);
 }
 
