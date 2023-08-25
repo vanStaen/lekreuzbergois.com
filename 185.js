@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunklekreuzbergois=self.webpackChunklekreuzbergois||[]).push([[185],{27185:(e,s,u)=>{u.r(s),u.d(s,{default:()=>f});const f=u.p+"5240043424df908142855672e78ea2a5.woff2"}}]);
-//# sourceMappingURL=185.js.map

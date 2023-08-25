@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunklekreuzbergois=self.webpackChunklekreuzbergois||[]).push([[5668],{45668:(e,t,r)=>{function u(e,t,r){var u=new Date(e,t-1,r,0,0,0,0),a=new Date(u.valueOf()+864e5);return[a.getFullYear(),a.getMonth()+1,a.getDate()]}r.r(t),r.d(t,{getTomorrowDate:()=>u})}}]);
+//# sourceMappingURL=5668.js.map
