@@ -8,6 +8,7 @@ import { pageStore } from "../../store/pageStore";
 import { pictureStore } from "../../store/pictureStore";
 import { Overlay } from "../Overlay/Overlay";
 import { PinInput } from "../PinInput/PinInput";
+import { Title } from "../Title/Title";
 import useImage from "../../helpers/useImage";
 
 import './Gallery.less';
@@ -132,9 +133,12 @@ export const Gallery = observer(() => {
 
     return (
         <>
-            <div className="gallery__imageContainer" id="image-container">
+            <div className="gallery__container" id="image-container">
+
+                <div className="gallery__title" ><Title /></div>
+
                 <div id="image-track">{picturesFormatted}</div>
-            </div>
+            </div >
             {pageStore.showPinInput && <PinInput />}
             {showOverlay && <Overlay setShowOverlay={setShowOverlay} />}
             {imageDesc && <div className="gallery__imageDescription">{imageDesc}</div>}
