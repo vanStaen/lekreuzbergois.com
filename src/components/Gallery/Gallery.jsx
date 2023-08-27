@@ -148,8 +148,12 @@ export const Gallery = observer(() => {
       </div>
       {pageStore.showPinInput && <PinInput />}
       {showOverlay && <Overlay setShowOverlay={setShowOverlay} />}
-      {imageDesc && (
+      {imageDesc ? (
         <div className="gallery__imageDescription">{imageDesc}</div>
+      ) : (
+        <div className="gallery__imageDescription">
+          <div className="imageDescriptionInfoOpen">← drag & drop →</div>
+        </div>
       )}
     </>
   );
