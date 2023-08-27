@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { observer } from "mobx-react-lite";
-import { LoadingOutlined, CloseOutlined } from "@ant-design/icons";
+import { LoadingOutlined, FrownOutlined } from "@ant-design/icons";
 import { useTranslation } from "react-i18next";
 import { Spin } from "antd";
 
@@ -113,7 +113,7 @@ export const Gallery = observer(() => {
           />
         ) : error ? (
           <div className="imageError">
-            <CloseOutlined />
+            <FrownOutlined />
             <div className="textError">Error when loading image</div>
           </div>
         ) : (
