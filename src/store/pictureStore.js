@@ -9,7 +9,7 @@ export class PictureStore {
   pictures = [
     {
       id: 1,
-      name: 'gliter',
+      name: '006',
       imgtype: 'jpg',
       desc: 'GliterBomb',
       year: 2019,
@@ -17,23 +17,31 @@ export class PictureStore {
     },
     {
       id: 2,
-      name: 'float',
+      name: '005',
       imgtype: 'jpg',
       desc: 'MiraLykke',
       year: 2018,
       explicit: false,
     },
     {
-      id: 16,
-      name: 'smoke',
+      id: 15,
+      name: '014',
       imgtype: 'jpg',
       desc: 'Klara Kristal',
       year: 2020,
       explicit: true,
     },
     {
+      id: 16,
+      name: '016',
+      imgtype: 'jpg',
+      desc: 'Self Reflection',
+      year: 2021,
+      explicit: true,
+    },
+    {
       id: 3,
-      name: 'heels',
+      name: '008',
       imgtype: 'jpg',
       desc: 'Provocateur',
       year: 2022,
@@ -41,7 +49,7 @@ export class PictureStore {
     },
     {
       id: 4,
-      name: 'hords',
+      name: '009',
       imgtype: 'png',
       desc: 'HouseOfRedDoors',
       year: 2015,
@@ -49,7 +57,7 @@ export class PictureStore {
     },
     {
       id: 5,
-      name: 'see',
+      name: '012',
       imgtype: 'jpg',
       desc: 'LustSee',
       year: 2019,
@@ -57,7 +65,7 @@ export class PictureStore {
     },
     {
       id: 6,
-      name: 'model',
+      name: '011',
       imgtype: 'jpg',
       desc: 'UndSieSiehtGutAus',
       year: 2018,
@@ -65,7 +73,7 @@ export class PictureStore {
     },
     {
       id: 7,
-      name: 'waet',
+      name: '015',
       imgtype: 'jpg',
       desc: 'WeAreEnfantTerrible',
       year: 2009,
@@ -73,7 +81,7 @@ export class PictureStore {
     },
     {
       id: 8,
-      name: 'halloween',
+      name: '007',
       imgtype: 'jpg',
       desc: 'DeuxFrancs',
       year: 2018,
@@ -81,7 +89,7 @@ export class PictureStore {
     },
     {
       id: 9,
-      name: 'skirt',
+      name: '013',
       imgtype: 'jpg',
       desc: 'Autoportrait',
       year: 2020,
@@ -89,7 +97,7 @@ export class PictureStore {
     },
     {
       id: 10,
-      name: 'feel',
+      name: '004',
       imgtype: 'jpg',
       desc: 'FeetFestival',
       year: 2019,
@@ -97,7 +105,7 @@ export class PictureStore {
     },
     {
       id: 11,
-      name: 'dark',
+      name: '003',
       imgtype: 'jpg',
       desc: 'DarkEditorial',
       year: 2023,
@@ -105,7 +113,7 @@ export class PictureStore {
     },
     {
       id: 12,
-      name: 'aarhus',
+      name: '001',
       imgtype: 'jpg',
       desc: 'Aarhus',
       year: 2021,
@@ -113,7 +121,7 @@ export class PictureStore {
     },
     {
       id: 13,
-      name: 'arne',
+      name: '002',
       imgtype: 'jpg',
       desc: 'Klahs',
       year: 2014,
@@ -121,7 +129,7 @@ export class PictureStore {
     },
     {
       id: 14,
-      name: 'mirror',
+      name: '010',
       imgtype: 'jpg',
       desc: 'Mirror',
       year: 2022,
