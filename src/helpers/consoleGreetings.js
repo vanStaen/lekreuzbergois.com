@@ -1,4 +1,4 @@
-export function inspectGreetings() {
+export function consoleGreetings() {
     console.log('##########################################################');
     console.log('#   _   _      _ _         _   _                         #');
     console.log('#  | | | | ___| | | ___   | |_| |__   ___ _ __ ___       #');
