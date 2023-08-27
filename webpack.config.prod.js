@@ -19,7 +19,8 @@ module.exports = {
       template: "./public/index.html",
     }),
     new webpack.DefinePlugin({
-      "process.env.API_URL": JSON.stringify("https://vanstaen.github.io/lekreuzbergois/")
+      "process.env.API_URL": JSON.stringify("https://vanstaen.github.io/lekreuzbergois/"),
+      "process.env.SECRET_PIN": 2223,
     }),
     new CopyPlugin({
       patterns: [

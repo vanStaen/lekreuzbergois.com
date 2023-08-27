@@ -5,8 +5,6 @@ import { useTranslation } from "react-i18next";
 import './PinInput.less'
 import { pageStore } from "../../store/pageStore";
 
-const TEMP_PIN = "1234"
-
 export const PinInput = observer(() => {
     const [isNope, setIsNope] = useState(false);
     const [isReadyToEnter, setIsReadyToEnter] = useState(false);
@@ -72,7 +70,7 @@ export const PinInput = observer(() => {
         const pin3 = document.getElementById("pin3").value;
         const pin4 = document.getElementById("pin4").value;
         if (pin1 !== "" && pin2 !== "" && pin3 !== "" && pin4 !== "") {
-            if (pin1 + pin2 + pin3 + pin4 === TEMP_PIN) {
+            if (String(pin1 + pin2 + pin3 + pin4) === String(process.env.SECRET_PIN)) {
                 pageStore.setShowSensiblePictures(true);
                 pageStore.setShowPinInput(false);
             } else {
