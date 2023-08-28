@@ -32,6 +32,17 @@ const App = observer(() => {
   }, []);
 
   useEffect(() => {
+    const language = navigator.language || navigator.userLanguage;
+    if (language === "de-DE") {
+      i18n.changeLanguage("de-DE");
+    } else if (language === "fr-FR") {
+      i18n.changeLanguage("fr-FR");
+    } else {
+      i18n.changeLanguage("en-US");
+    }
+  }, [i18n]);
+
+  useEffect(() => {
     consoleGreetings();
   }, []);
 

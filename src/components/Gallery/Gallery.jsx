@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { observer } from "mobx-react-lite";
 import { LoadingOutlined, FrownOutlined } from "@ant-design/icons";
 import { useTranslation } from "react-i18next";
@@ -90,6 +90,18 @@ export const Gallery = observer(() => {
     await pictureStore.setSelectedPicture(pictureId);
     setShowOverlay(true);
   };
+
+  const handleOnScroll = (e) => {
+    //TODO
+    //console.log(e.deltaX);
+  };
+
+  useEffect(() => {
+    document.addEventListener("wheel", handleOnScroll);
+    return () => {
+      document.removeEventListener("wheel", handleOnScroll);
+    };
+  }, [handleOnScroll]);
 
   const picturesFormatted = pictureStore.pictures.map((picture) => {
     const { loading, image, error } = useImage(
