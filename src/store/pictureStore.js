@@ -135,14 +135,6 @@ export class PictureStore {
       year: 2022,
       explicit: false,
     },
-    {
-      id: 17,
-      name: '017',
-      imgtype: 'jpg',
-      desc: 'Netz',
-      year: 2019,
-      explicit: true,
-    },
   ];
 
   constructor() {

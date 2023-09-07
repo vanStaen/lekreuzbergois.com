@@ -18,7 +18,9 @@ export const Overlay = observer((props) => {
   const [imageLoaded, setImageLoaded] = useState(null);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
-  const [windowInnerHeight, setWindowInnerHeight] = useState(window.innerHeight)
+  const [windowInnerHeight, setWindowInnerHeight] = useState(
+    window.innerHeight
+  );
   const throttling = useRef(false);
 
   // the required distance between touchStart and touchEnd to be detected as a swipe
@@ -110,7 +112,7 @@ export const Overlay = observer((props) => {
 
   const resetWindowInnerHeight = () => {
     setWindowInnerHeight(window.innerHeight);
-  }
+  };
 
   useEffect(() => {
     document.addEventListener("keydown", keyDownHandler);
@@ -143,7 +145,8 @@ export const Overlay = observer((props) => {
   };
 
   return (
-    <div className="overlay__overlay"
+    <div
+      className="overlay__overlay"
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
@@ -156,40 +159,41 @@ export const Overlay = observer((props) => {
           props.setShowOverlay(false);
         }}
       ></div>
-      {!props.isMobile && <>
-        <div
-          className="overlay__columnLeft"
-          style={{ height: windowInnerHeight }}
-          id="previousButton"
-          onClick={() => {
-            pictureStore.browsePicture(false);
-          }}
-        >
-          <LeftOutlined />
-        </div>
-        <div
-          className="overlay__columnRight"
-          style={{ height: windowInnerHeight }}
-          id="nextButton"
-          onMouseEnter={() => mouseHoverHandler(true)}
-          onMouseLeave={() => mouseHoverHandler(false)}
-          onClick={() => {
-            pictureStore.browsePicture(true);
-          }}
-        >
-          <RightOutlined />
-        </div>
-        <div
-          className="overlay__closeButton"
-          id="closeButton"
-          onClick={() => {
-            props.setShowOverlay(false);
-          }}
-        >
-          <CloseOutlined />
-        </div>
-      </>}
-
+      {!props.isMobile && (
+        <>
+          <div
+            className="overlay__columnLeft"
+            style={{ height: windowInnerHeight }}
+            id="previousButton"
+            onClick={() => {
+              pictureStore.browsePicture(false);
+            }}
+          >
+            <LeftOutlined />
+          </div>
+          <div
+            className="overlay__columnRight"
+            style={{ height: windowInnerHeight }}
+            id="nextButton"
+            onMouseEnter={() => mouseHoverHandler(true)}
+            onMouseLeave={() => mouseHoverHandler(false)}
+            onClick={() => {
+              pictureStore.browsePicture(true);
+            }}
+          >
+            <RightOutlined />
+          </div>
+          <div
+            className="overlay__closeButton"
+            id="closeButton"
+            onClick={() => {
+              props.setShowOverlay(false);
+            }}
+          >
+            <CloseOutlined />
+          </div>
+        </>
+      )}
 
       <div className="overlay__pictureContainer">
         <div className="overlay__infoAction">
@@ -200,7 +204,7 @@ export const Overlay = observer((props) => {
             >
               <LinkOutlined onClick={copyLinkHandler} />
             </Tooltip>{" "}
-            <span className="overlay__id">  {selected.desc}</span>
+            <span className="overlay__id"> {selected.desc}</span>
           </div>
         </div>
 
@@ -219,9 +223,9 @@ export const Overlay = observer((props) => {
             src={imageLoaded}
             alt={selected.desc}
             key={`img__${selected.id}`}
-          />)}
+          />
+        )}
       </div>
-
     </div>
   );
 });
