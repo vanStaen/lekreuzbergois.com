@@ -23,7 +23,7 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       "process.env.API_URL": JSON.stringify("http://localhost:9001"),
-      "process.env.SECRET_PIN": 2223,
+      "process.env.SECRET_PIN": 1789,
     }),
     new CopyPlugin({
       patterns: [

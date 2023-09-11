@@ -20,7 +20,7 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       "process.env.API_URL": JSON.stringify("https://vanstaen.github.io/lekreuzbergois/"),
-      "process.env.SECRET_PIN": 2223,
+      "process.env.SECRET_PIN": 1789,
     }),
     new CopyPlugin({
       patterns: [
