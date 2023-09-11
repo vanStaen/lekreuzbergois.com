@@ -134,13 +134,7 @@ export const Gallery = observer(() => {
               !pageStore.showSensiblePictures &&
               picture.explicit &&
               "imageSensible"
-            }
-                            ${
-                              pageStore.showSensiblePictures &&
-                              !picture.explicit &&
-                              "imageSensible"
-                            }
-                                `}
+            }`}
             src={image}
             draggable="false"
           />

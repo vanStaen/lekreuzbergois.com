@@ -7,12 +7,13 @@ import "./Title.less";
 
 export const Title = observer(() => {
   return (
-    <div
-      className={
-        pageStore.showSensiblePictures ? "mainTitleFraktur" : "mainTitle"
-      }
-    >
-      le Kreuzbergois
-    </div>
+    <>
+      <div className="mainTitleFraktur">le Kreuzbergois</div>
+      <div className="mainTitleDesc">
+        {pageStore.showSensiblePictures
+          ? "Sexiest photographer"
+          : "Boring photographer"}
+      </div>
+    </>
   );
 });

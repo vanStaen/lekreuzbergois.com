@@ -8,14 +8,6 @@ export class PictureStore {
 
   pictures = [
     {
-      id: 1,
-      name: '006',
-      imgtype: 'jpg',
-      desc: 'GliterBomb',
-      year: 2019,
-      explicit: true,
-    },
-    {
       id: 2,
       name: '005',
       imgtype: 'jpg',
@@ -29,22 +21,6 @@ export class PictureStore {
       imgtype: 'jpg',
       desc: 'Klara Kristal',
       year: 2020,
-      explicit: true,
-    },
-    {
-      id: 16,
-      name: '016',
-      imgtype: 'jpg',
-      desc: 'Self Reflection',
-      year: 2021,
-      explicit: true,
-    },
-    {
-      id: 3,
-      name: '008',
-      imgtype: 'jpg',
-      desc: 'Provocateur',
-      year: 2022,
       explicit: true,
     },
     {
@@ -62,14 +38,6 @@ export class PictureStore {
       desc: 'LustSee',
       year: 2019,
       explicit: false,
-    },
-    {
-      id: 6,
-      name: '011',
-      imgtype: 'jpg',
-      desc: 'UndSieSiehtGutAus',
-      year: 2018,
-      explicit: true,
     },
     {
       id: 7,
@@ -94,6 +62,14 @@ export class PictureStore {
       desc: 'Autoportrait',
       year: 2020,
       explicit: false,
+    },
+    {
+      id: 6,
+      name: '011',
+      imgtype: 'jpg',
+      desc: 'UndSieSiehtGutAus',
+      year: 2018,
+      explicit: true,
     },
     {
       id: 10,
@@ -128,6 +104,14 @@ export class PictureStore {
       explicit: false,
     },
     {
+      id: 16,
+      name: '016',
+      imgtype: 'jpg',
+      desc: 'Self Reflection',
+      year: 2021,
+      explicit: true,
+    },
+    {
       id: 14,
       name: '010',
       imgtype: 'jpg',
@@ -157,8 +141,12 @@ export class PictureStore {
   browsePicture = (next) => {
     this.setIsPictureLoading(true);
     let picturesArray;
-    // Filter in/out explicit pictures
-    picturesArray = this.pictures.filter((picture) => picture.explicit === pageStore.showSensiblePictures);
+    // Filter out explicit pictures
+    if (pageStore.showSensiblePictures === false) {
+      picturesArray = this.pictures.filter((picture) => picture.explicit === pageStore.showSensiblePictures);
+    } else {
+      picturesArray = this.pictures;
+    }
     // get index of picture in array
     let index = picturesArray.indexOf(this.selectedPicture);
     // Increment selectedPictureId
