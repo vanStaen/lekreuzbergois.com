@@ -107,7 +107,7 @@ export class PictureStore {
       id: 16,
       name: '016',
       imgtype: 'jpg',
-      desc: 'Self Reflection',
+      desc: 'Sweet Reflection',
       year: 2021,
       explicit: true,
     },
