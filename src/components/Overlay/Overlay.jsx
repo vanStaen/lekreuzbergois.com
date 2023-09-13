@@ -52,7 +52,7 @@ export const Overlay = observer((props) => {
   };
 
   const selected = pictureStore.selectedPicture;
-  const { image } = useImage(selected.name, "img", selected.imgtype);
+  const { image } = useImage(selected.name, "img/full", selected.imgtype);
 
   const loadImage = async (image) => {
     setImageLoaded(null);
