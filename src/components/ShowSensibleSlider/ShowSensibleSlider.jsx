@@ -20,14 +20,13 @@ export const ShowSensibleSlider = observer(() => {
   };
 
   useEffect(() => {
-    const mainContainerElement = document.getElementById("mainContainer");
     if (pageStore.showSensiblePictures) {
-      mainContainerElement.style.backgroundColor = "rgba(21,21,21,1)";
+      document.body.style.backgroundColor = "#212121";
     } else {
-      mainContainerElement.style.backgroundColor = "transparent";
+      document.body.style.backgroundColor = "#282d2c";
     }
     setIsShown(pageStore.showSensiblePictures);
-  }, [pageStore.showSensiblePictures])
+  }, [pageStore.showSensiblePictures]);
 
   return (
     <div className="showSensibleContainer">
