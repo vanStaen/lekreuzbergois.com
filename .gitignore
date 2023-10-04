@@ -1,2 +1,6 @@
 .env
 node_modules
+src/img/.DS_Store
+src/img/originals/.DS_Store
+src/img/thumbs/.DS_Store
+src/img/full/.DS_Store
