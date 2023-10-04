@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunklekreuzbergois=self.webpackChunklekreuzbergois||[]).push([[789],{20789:(e,s,c)=>{e.exports=c.p+"5e2e7ca0ca948304c26d.jpg"}}]);
