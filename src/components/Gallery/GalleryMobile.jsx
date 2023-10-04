@@ -53,10 +53,6 @@ export const GalleryMobile = observer(() => {
               !pageStore.showSensiblePictures &&
               picture.explicit &&
               "galleryMobile__imageSensible"
-            } ${
-              pageStore.showSensiblePictures &&
-              !picture.explicit &&
-              "galleryMobile__imageSensible"
             }`}
             src={image}
             draggable="false"
