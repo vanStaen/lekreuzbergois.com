@@ -90,16 +90,24 @@ export const Overlay = observer((props) => {
     if (throttling.current === false) {
       throttling.current = true;
       if (keyPressed === "arrowdown" || keyPressed === "arrowright") {
-        nextButton.style.backgroundColor = "rgba(255,255,255,.15)";
+        if (nextButton) {
+          nextButton.style.backgroundColor = "rgba(255,255,255,.15)";
+        }
         pictureStore.browsePicture(true);
         setTimeout(() => {
-          nextButton.style.backgroundColor = "rgba(255,255,255, 0)";
+          if (nextButton) {
+            nextButton.style.backgroundColor = "rgba(255,255,255, 0)";
+          }
         }, 100);
       } else if (keyPressed === "arrowup" || keyPressed === "arrowleft") {
-        previousButton.style.backgroundColor = "rgba(255,255,255,.15)";
+        if (previousButton) {
+          previousButton.style.backgroundColor = "rgba(255,255,255,.15)";
+        }
         pictureStore.browsePicture(false);
         setTimeout(() => {
-          previousButton.style.backgroundColor = "rgba(255,255,255, 0)";
+          if (previousButton) {
+            previousButton.style.backgroundColor = "rgba(255,255,255, 0)";
+          }
         }, 100);
       } else if (keyPressed === "escape") {
         props.setShowOverlay(false);
