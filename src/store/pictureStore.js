@@ -8,7 +8,7 @@ export class PictureStore {
 
   pictures = [
     {
-      id: 2,
+      id: 5,
       name: '005',
       imgtype: 'jpg',
       desc: 'MiraLykke',
@@ -16,7 +16,7 @@ export class PictureStore {
       explicit: false,
     },
     {
-      id: 15,
+      id: 14,
       name: '014',
       imgtype: 'jpg',
       desc: 'KlaraKristal',
@@ -24,7 +24,7 @@ export class PictureStore {
       explicit: true,
     },
     {
-      id: 4,
+      id: 9,
       name: '009',
       imgtype: 'png',
       desc: 'HouseOfRedDoors',
@@ -32,7 +32,7 @@ export class PictureStore {
       explicit: false,
     },
     {
-      id: 5,
+      id: 12,
       name: '012',
       imgtype: 'jpg',
       desc: 'LustSee',
@@ -40,7 +40,7 @@ export class PictureStore {
       explicit: false,
     },
     {
-      id: 15,
+      id: 17,
       name: '017',
       imgtype: 'jpg',
       desc: 'KlaraFetish',
@@ -48,7 +48,7 @@ export class PictureStore {
       explicit: true,
     },
     {
-      id: 7,
+      id: 15,
       name: '015',
       imgtype: 'jpg',
       desc: 'WeAreEnfantTerrible',
@@ -56,7 +56,15 @@ export class PictureStore {
       explicit: false,
     },
     {
-      id: 8,
+      id: 22,
+      name: '022',
+      imgtype: 'jpg',
+      desc: 'Provocateur',
+      year: 2022,
+      explicit: true,
+    },
+    {
+      id: 7,
       name: '007',
       imgtype: 'jpg',
       desc: 'DeuxFrancs',
@@ -64,7 +72,7 @@ export class PictureStore {
       explicit: false,
     },
     {
-      id: 9,
+      id: 13,
       name: '013',
       imgtype: 'jpg',
       desc: 'Autoportrait',
@@ -72,7 +80,7 @@ export class PictureStore {
       explicit: false,
     },
     {
-      id: 6,
+      id: 11,
       name: '011',
       imgtype: 'jpg',
       desc: 'UndSieSiehtGutAus',
@@ -80,7 +88,7 @@ export class PictureStore {
       explicit: true,
     },
     {
-      id: 10,
+      id: 4,
       name: '004',
       imgtype: 'jpg',
       desc: 'FeelFestival',
@@ -88,7 +96,15 @@ export class PictureStore {
       explicit: false,
     },
     {
-      id: 11,
+      id: 19,
+      name: '019',
+      imgtype: 'jpg',
+      desc: 'TeaTime',
+      year: 2019,
+      explicit: true,
+    },
+    {
+      id: 3,
       name: '003',
       imgtype: 'jpg',
       desc: 'DarkEditorial',
@@ -96,7 +112,7 @@ export class PictureStore {
       explicit: false,
     },
     {
-      id: 12,
+      id: 1,
       name: '001',
       imgtype: 'jpg',
       desc: 'Aarhus',
@@ -112,7 +128,7 @@ export class PictureStore {
       explicit: true,
     },
     {
-      id: 13,
+      id: 2,
       name: '002',
       imgtype: 'jpg',
       desc: 'Klahs',
@@ -128,12 +144,20 @@ export class PictureStore {
       explicit: true,
     },
     {
-      id: 14,
+      id: 10,
       name: '010',
       imgtype: 'jpg',
       desc: 'Mirror',
       year: 2022,
       explicit: false,
+    },
+    {
+      id: 21,
+      name: '021',
+      imgtype: 'jpg',
+      desc: 'Fernsehturm',
+      year: 2022,
+      explicit: true,
     },
   ];
 
