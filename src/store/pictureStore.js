@@ -159,6 +159,14 @@ export class PictureStore {
       year: 2022,
       explicit: true,
     },
+    {
+      id: 23,
+      name: '023',
+      imgtype: 'jpg',
+      desc: 'MiroirMiroir',
+      year: 2020,
+      explicit: true,
+    },
   ];
 
   constructor() {
