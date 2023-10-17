@@ -72,8 +72,8 @@ export class PictureStore {
       explicit: true,
     },
     {
-      id: 22,
-      name: '022',
+      id: 8,
+      name: '008',
       imgtype: 'jpg',
       desc: 'Provocateur',
       year: 2022,
@@ -112,11 +112,11 @@ export class PictureStore {
       explicit: false,
     },
     {
-      id: 19,
-      name: '019',
+      id: 6,
+      name: '006',
       imgtype: 'jpg',
-      desc: 'TeaTime',
-      year: 2019,
+      desc: 'Fernsehturm',
+      year: 2022,
       explicit: true,
     },
     {
@@ -168,11 +168,11 @@ export class PictureStore {
       explicit: false,
     },
     {
-      id: 21,
-      name: '021',
+      id: 24,
+      name: '024',
       imgtype: 'jpg',
-      desc: 'Fernsehturm',
-      year: 2022,
+      desc: 'Miau',
+      year: 2021,
       explicit: true,
     },
   ];
