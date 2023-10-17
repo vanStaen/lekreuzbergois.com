@@ -56,6 +56,14 @@ export class PictureStore {
       explicit: false,
     },
     {
+      id: 23,
+      name: '023',
+      imgtype: 'jpg',
+      desc: 'TeaTime',
+      year: 2019,
+      explicit: true,
+    },
+    {
       id: 8,
       name: '007',
       imgtype: 'jpg',
@@ -134,6 +142,14 @@ export class PictureStore {
       desc: 'Mirror',
       year: 2022,
       explicit: false,
+    },
+    {
+      id: 24,
+      name: '024',
+      imgtype: 'jpg',
+      desc: 'Miau',
+      year: 2021,
+      explicit: true,
     },
   ];
 
