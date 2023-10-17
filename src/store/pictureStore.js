@@ -32,8 +32,8 @@ export class PictureStore {
       explicit: false,
     },
     {
-      id: 23,
-      name: '023',
+      id: 19,
+      name: '019',
       imgtype: 'jpg',
       desc: 'MiroirMiroir',
       year: 2020,
