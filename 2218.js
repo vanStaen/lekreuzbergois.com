@@ -1,1 +1,1 @@
-"use strict";(self.webpackChunklekreuzbergois=self.webpackChunklekreuzbergois||[]).push([[2218],{52218:(e,s,a)=>{e.exports=a.p+"8e22a4a91a31aaf2c106.jpg"}}]);
+"use strict";(self.webpackChunklekreuzbergois=self.webpackChunklekreuzbergois||[]).push([[2218],{52218:(e,s,c)=>{e.exports=c.p+"8771c6fc02c6f5b26ec8.jpg"}}]);
