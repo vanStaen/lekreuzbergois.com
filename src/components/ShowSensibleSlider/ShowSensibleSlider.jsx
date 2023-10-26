@@ -7,13 +7,19 @@ import { pageStore } from "../../store/pageStore";
 
 import "./ShowSensibleSlider.less";
 
+const pinProtected = false;
+
 export const ShowSensibleSlider = observer(() => {
   const { t } = useTranslation();
   const [isShown, setIsShown] = useState();
 
   const slideHandler = (value) => {
     if (value) {
-      pageStore.setShowPinInput(value);
+      if (pinProtected) {
+        pageStore.setShowPinInput(value);
+      } else {
+        pageStore.setShowSensiblePictures(true);
+      }
     } else {
       pageStore.setShowSensiblePictures(false);
     }
