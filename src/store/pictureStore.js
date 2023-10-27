@@ -32,11 +32,27 @@ export class PictureStore {
       explicit: false,
     },
     {
-      id: 19,
-      name: '019',
+      id: 22,
+      name: '022',
       imgtype: 'jpg',
-      desc: 'MiroirMiroir',
-      year: 2020,
+      desc: 'FineIstMeinSchwein | I',
+      year: 2023,
+      explicit: true,
+    },
+    {
+      id: 25,
+      name: '025',
+      imgtype: 'jpg',
+      desc: 'FineIstMeinSchwein | II',
+      year: 2023,
+      explicit: true,
+    },
+    {
+      id: 21,
+      name: '021',
+      imgtype: 'jpg',
+      desc: 'FineIstMeinSchwein | III',
+      year: 2023,
       explicit: true,
     },
     {
@@ -128,38 +144,6 @@ export class PictureStore {
       explicit: false,
     },
     {
-      id: 22,
-      name: '022',
-      imgtype: 'jpg',
-      desc: 'FineIstMeinSchwein | Kitty',
-      year: 2023,
-      explicit: true,
-    },
-    {
-      id: 25,
-      name: '025',
-      imgtype: 'jpg',
-      desc: 'FineIstMeinSchwein | Renate',
-      year: 2023,
-      explicit: true,
-    },
-    {
-      id: 21,
-      name: '021',
-      imgtype: 'jpg',
-      desc: 'FineIstMeinSchwein | Else',
-      year: 2023,
-      explicit: true,
-    },
-    {
-      id: 26,
-      name: '026',
-      imgtype: 'jpg',
-      desc: 'FineIstMeinSchwein | Berghain',
-      year: 2023,
-      explicit: true,
-    },
-    {
       id: 1,
       name: '001',
       imgtype: 'jpg',
@@ -207,6 +191,14 @@ export class PictureStore {
       year: 2021,
       explicit: true,
     },
+    {
+      id: 19, 
+      name: '019',
+      imgtype: 'jpg',
+      desc: 'MiroirMiroir',
+      year: 2020,
+      explicit: true,
+    }
   ];
 
   constructor() {
