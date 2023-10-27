@@ -4,13 +4,13 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
   Route,
-  RouterProvider,
 } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import { Main } from "./pages/Main";
 import { pageStore } from "./store/pageStore";
 import { LanguageDropDown } from "./components/LanguageDropDown/LanguageDropDown";
+import { Socials } from "./components/Socials/Socials";
 import { consoleGreetings } from "./helpers/consoleGreetings";
 
 import "../src/lib/i18n";
@@ -64,6 +64,7 @@ const App = observer(() => {
     <div className="App">
       <div className="main">
         <LanguageDropDown />
+        <Socials />
         {/*<RouterProvider router={router} />*/}
         <Main />
       </div>

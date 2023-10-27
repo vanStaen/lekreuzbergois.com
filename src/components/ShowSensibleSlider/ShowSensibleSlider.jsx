@@ -7,7 +7,7 @@ import { pageStore } from "../../store/pageStore";
 
 import "./ShowSensibleSlider.less";
 
-const pinProtected = false;
+const pinProtected = true;
 
 export const ShowSensibleSlider = observer(() => {
   const { t } = useTranslation();

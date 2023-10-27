@@ -1,0 +1,68 @@
+.socialsContainer {
+    z-index: 2;
+    position: absolute;
+    top: 30px;
+    right: 45px;
+    vertical-align: bottom;
+    margin: 5px 10px;
+    font-size: 17px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    vertical-align: top;
+
+    .insta {
+        display: inline-block;
+        vertical-align: top;
+        padding: 10px 7px 5px 7px;
+        cursor: pointer;
+        filter: brightness(100);
+        &:hover {
+            filter: brightness(1);
+        }
+        .logo{
+            width: 25px;
+        }
+    }
+
+    .fetlife {
+        display: inline-block;
+        vertical-align: top;
+        padding: 10px 7px 5px 7px;
+        cursor: pointer;
+        cursor: pointer;
+        filter: brightness(100);
+        &:hover {
+            filter: brightness(1);
+        }
+        .logo{
+            width: 22px;
+        }
+    }
+
+    .email {
+        display: inline-block;
+        vertical-align: top;
+        padding: 5px 2px 0 2px;
+        cursor: pointer;
+        filter: grayscale(1);
+        &:hover {
+            filter: grayscale(0);
+        }
+        .logo{
+            width: 35px;
+        }
+    }
+}
+
+@media (max-width: 680px) {
+    .socialsContainer { 
+        margin: 0;   
+        top: 135px;
+        right: 0px;
+        width: 100vw;
+        text-align: center;
+    }
+    .fetlife {
+        width: 50px;
+    }
+}

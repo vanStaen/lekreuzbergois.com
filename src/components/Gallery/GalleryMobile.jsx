@@ -69,6 +69,7 @@ export const GalleryMobile = observer(() => {
         style={{ minHeight: window.innerHeight }}
       >
         <Title />
+        <div className="galleryMobile__socialsSpacer"></div>
         {picturesFormatted}
       </div>
       {pageStore.showPinInput && <PinInput />}
