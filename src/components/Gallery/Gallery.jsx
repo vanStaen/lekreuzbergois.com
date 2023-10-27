@@ -117,6 +117,13 @@ export const Gallery = observer(() => {
         onMouseLeave={handleMouseLeave}
         onDoubleClick={() => handleDoubleClick(picture.id)}
       >
+        <div
+          className={`imageOver ${
+            !pageStore.showSensiblePictures &&
+            picture.explicit &&
+            "imageSensible"
+          }`}
+        ></div>
         {loading ? (
           <Spin
             indicator={<LoadingOutlined spin />}
