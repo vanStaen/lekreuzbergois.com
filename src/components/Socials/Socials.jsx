@@ -12,30 +12,27 @@ import "./Socials.less";
 export const Socials = observer(() => {
   const { t } = useTranslation();
 
-  const clickEmailHandler = () => {
-    //TODO
-  };
-
   return (
     <div className="socialsContainer">
       <div className="insta">
         <Tooltip placement="bottom" title="le Kreuzbergois on Insta">
-          <img className="logo" src={InstaLogo} id="insta" />
+          <a href="https://instagram.com/le_kreuzbergois" target="_blank">
+            <img className="logo" src={InstaLogo} id="insta" />
+          </a>
         </Tooltip>
       </div>
       <div className="fetlife">
         <Tooltip placement="bottom" title="le Kreuzbergois on Fetlife">
-          <img className="logo" src={FetlifeLogo} id="insta" />
+          <a href="https://fetlife.com/users/8983549" target="_blank">
+            <img className="logo" src={FetlifeLogo} id="fetlife" />
+          </a>
         </Tooltip>
       </div>
       <div className="email">
         <Tooltip placement="bottom" title="Email le Kreuzbergois">
-          <img
-            className="logo"
-            src={EmailLogo}
-            id="email"
-            onClick={clickEmailHandler}
-          />
+          <a href="mailto:info@lekreuzbergois.com">
+            <img className="logo" src={EmailLogo} id="email" />
+          </a>
         </Tooltip>
       </div>
     </div>
