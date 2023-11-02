@@ -48,14 +48,6 @@ export class PictureStore {
       explicit: true,
     },
     {
-      id: 21,
-      name: '021',
-      imgtype: 'jpg',
-      desc: 'FineIstMeinSchwein | III',
-      year: 2023,
-      explicit: true,
-    },
-    {
       id: 12,
       name: '012',
       imgtype: 'jpg',
@@ -144,6 +136,14 @@ export class PictureStore {
       explicit: false,
     },
     {
+      id: 24,
+      name: '024',
+      imgtype: 'jpg',
+      desc: 'Miau',
+      year: 2021,
+      explicit: true,
+    },
+    {
       id: 1,
       name: '001',
       imgtype: 'jpg',
@@ -184,11 +184,11 @@ export class PictureStore {
       explicit: false,
     },
     {
-      id: 24,
-      name: '024',
+      id: 21,
+      name: '021',
       imgtype: 'jpg',
-      desc: 'Miau',
-      year: 2021,
+      desc: 'FineIstMeinSchwein | III',
+      year: 2023,
       explicit: true,
     },
     {
