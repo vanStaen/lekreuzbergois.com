@@ -113,6 +113,15 @@ export const PinInput = observer(() => {
     };
   }, [keyDownHandler, keyUpHandler, resetWindowInnerHeight]);
 
+  const handleCloseClick = () => {
+    console.log("clicked to close pin component");
+    pageStore.setShowPinInput(false);
+  };
+
+  const handlePinClick = (e) => {
+    e.stopPropagation();
+  };
+
   return (
     <>
       <div
@@ -123,7 +132,7 @@ export const PinInput = observer(() => {
       <div
         className="pin__container"
         style={{ height: windowInnerHeight }}
-        onClick={() => pageStore.setShowPinInput(false)}
+        onClick={handleCloseClick}
       >
         <div className="pin__infoTop">{t("pin.enterAccessCode")}</div>
         <div id="pin-code" className="pin-code">
@@ -132,6 +141,7 @@ export const PinInput = observer(() => {
             type="number"
             maxLength="1"
             onChange={onPinChangeHandler}
+            onClick={handlePinClick}
             autoFocus
           />
           <input
@@ -139,18 +149,21 @@ export const PinInput = observer(() => {
             type="number"
             maxLength="1"
             onChange={onPinChangeHandler}
+            onClick={handlePinClick}
           />
           <input
             id="pin3"
             type="number"
             maxLength="1"
             onChange={onPinChangeHandler}
+            onClick={handlePinClick}
           />
           <input
             id="pin4"
             type="number"
             maxLength="1"
             onChange={onPinChangeHandler}
+            onClick={handlePinClick}
           />
         </div>
         <div className="pin__infoBottom">
