@@ -8,6 +8,8 @@
         "nope": "Nope, Thanks",
         "pressEnter": "Press 'Enter'",
         "enterAccessCode" : "Input access code"
-        
-    } 
+    },
+    "general": {
+        "on": "on"
+    }
 }

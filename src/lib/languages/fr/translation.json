@@ -9,5 +9,8 @@
         "nope": "Non, Merci",
         "pressEnter": "Appuyez sur 'Entrer'",
         "enterAccessCode" : "Saissie du code d'accés"
-    } 
+    },
+    "general": {
+        "on": "sur"
+    }
 }
