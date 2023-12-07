@@ -22,7 +22,11 @@ export const Socials = observer(() => {
       >
         <Tooltip
           placement="bottom"
-          title={`le Kreuzbergois ${t("general.on")} Insta`}
+          title={
+            <>
+              <i>le Kreuzbergois</i> {t("general.on")} Instagram
+            </>
+          }
         >
           <img className="instaLogo" src={InstaLogo} id="insta" /> Insta
         </Tooltip>
@@ -37,7 +41,11 @@ export const Socials = observer(() => {
           >
             <Tooltip
               placement="bottom"
-              title={`le Kreuzbergois ${t("general.on")} Fetlife`}
+              title={
+                <>
+                  <i>le Kreuzbergois</i> {t("general.on")} Fetlife
+                </>
+              }
             >
               <img className="fetlifeLogo" src={FetlifeLogo} id="fetlife" />{" "}
               Fetlife
@@ -46,7 +54,14 @@ export const Socials = observer(() => {
           <div className="spacer">&nbsp;&nbsp;|&nbsp;&nbsp;</div>
         </>
       )}
-      <Tooltip placement="bottom" title="Email le Kreuzbergois">
+      <Tooltip
+        placement="bottom"
+        title={
+          <>
+            Email <i>le Kreuzbergois</i>
+          </>
+        }
+      >
         <a className="link" href="mailto:info@lekreuzbergois.com">
           <img className="emailLogo" src={EmailLogo} id="email" /> Email
         </a>
