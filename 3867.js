@@ -1,0 +1,2 @@
+(self.webpackChunklekreuzbergois=self.webpackChunklekreuzbergois||[]).push([[3867,3725],{63867:()=>{self.addEventListener("install",(function(e){})),self.addEventListener("fetch",(function(e){}))}}]);
+//# sourceMappingURL=3867.js.map

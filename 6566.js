@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunklekreuzbergois=self.webpackChunklekreuzbergois||[]).push([[6566],{96566:(e,s,k)=>{e.exports=k.p+"78209738e75bfd13537c.ttf"}}]);
